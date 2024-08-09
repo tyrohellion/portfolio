@@ -279,7 +279,7 @@ body {
 
 
 
-@media all and (min-width: 700px) and (max-width: 950px) {
+@media all and (min-width: 768px) and (max-width: 950px) {
     .main-name {
         font-size: 7rem;
     }
@@ -299,7 +299,7 @@ body {
     }
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 767px) {
     .navbar {
         left: 0;
         top: 0;
@@ -311,6 +311,7 @@ body {
         background-color: var(--background-color-nav);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
+        justify-content: center;
     }
 
     .footer {
