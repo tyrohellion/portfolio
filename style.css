@@ -13,22 +13,113 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--background-color);
-  padding-bottom: 13rem;
   position: relative;
+  background: radial-gradient(circle, #111 0%, #000 100%);
+  color: white;
+}
+
+.name-audience-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.grid {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #111;
+  background-image: radial-gradient(rgb(38, 40, 46) 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+h1 {
+  font-family: Inter, sans-serif;
+  font-size: 8rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.audience-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.audience-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: calc(100vw - 65%);
+}
+
+.audience-nav button {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  align-items: center;
+  background: none;
+  color: rgb(116, 116, 116);
+  font-size: 1rem;
+  border: none;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.audience-nav button.active {
+  color: #ffffff;
+}
+
+.site-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.site-header nav button {
+  background: none;
+  border: none;
+  color: #aaa;
+  margin-right: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.site-header nav button:hover,
+.site-header nav button.active {
+  color: white;
+}
+
+.site-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 /* nav */
 
 .navbar-background-wrapper {
   position: fixed;
-  left: 50%;
+  left: calc(100vw - 50vw);
   top: 7vh;
   transform: translate(-50%, -50%);
 }
@@ -36,77 +127,84 @@ body {
 .navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   width: min-content;
   border-radius: 5rem;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  z-index: 2;
-  background-color: var(--background-color-nav);
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  z-index: 3;
+  background-color: #11111188;
   backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .nav-item {
   color: white;
-  font-size: 0.9rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
   width: fit-content;
   height: fit-content;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 5rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   text-decoration: none;
+  transition: all 150ms;
 }
 
 .nav-item:hover {
-  background-color: black;
+  background-color: rgba(33, 34, 39, 0.815);
+  transition: all 150ms;
   cursor: pointer;
 }
 
-/* name section */
-
-.main-wrapper {
+.pfp-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 113px;
+  padding-top: 12rem;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: left;
+  height: calc(100vh - 60vh);
+  padding: 15rem 10rem 10rem 10rem;
 }
 
-.main-name {
-  font-size: 10rem;
-  font-family: "Space Grotesk", sans-serif;
-  color: white;
-  font-weight: 700;
-  text-wrap: wrap;
-  margin-left: 16px;
-  cursor: default;
+.pfp {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.main-subheading {
-  font-size: 1rem;
-  color: white;
-  font-weight: 500;
-  text-wrap: wrap;
-  margin-left: 25px;
-  margin-right: 16px;
+.pfp:hover {
+  transform: scale(1.13);
 }
 
-/* second section */
-
-.second-wrapper {
-  display: flex;
-  justify-content: right;
+.img-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
 }
 
-.second-details {
-  text-align: right;
-  max-width: 500px;
-  margin-right: 25px;
-  font-size: 1rem;
-  color: white;
-  font-weight: 500;
-  text-wrap: wrap;
-  margin-top: 160px;
+.img-png {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(1.13);
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.pfp:hover .img-svg {
+  opacity: 0;
+}
+
+.pfp:hover .img-png {
+  opacity: 1;
 }
 
 /* icons */
@@ -123,11 +221,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 58px;
-  height: 48px;
+  width: 48px;
+  height: 38px;
   background-color: rgb(25, 25, 31);
   border-radius: 0.5rem;
   transition: all 150ms;
+}
+
+.icon-container img {
+  padding: 0.3rem;
 }
 
 .icon-container:hover {
@@ -138,11 +240,11 @@ body {
 /* projects list page */
 
 .projects-list-page-main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem 1rem 2rem 1rem;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 1rem 8rem 1rem;
+  gap: 1rem;
 }
 
 .project-card {
@@ -150,8 +252,10 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   align-items: flex-start;
-  background-color: rgb(17, 17, 19);
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(4px);
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1rem;
@@ -160,15 +264,15 @@ body {
 }
 
 .arcadia-href {
-    width: 340px;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+  width: 340px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 .project-card h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: white;
 }
 
@@ -181,11 +285,11 @@ body {
 .project-card-title {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .project-card-title p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: rgb(210, 216, 224);
 }
@@ -196,74 +300,30 @@ body {
 }
 
 .project-card:hover {
-  background-color: rgb(33, 34, 39);
+  background-color: rgba(33, 34, 39, 0.247);
   transition: all 150ms;
-  cursor: pointer;
-}
-
-/* footer */
-
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 2rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  padding: 1rem;
-  z-index: 1;
-  width: 100%;
-}
-
-.footer-contact-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.footer-item {
-  color: white;
-  font-size: 0.8rem;
-  min-width: fit-content;
-}
-
-.footer-icons-wrapper {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-icons-wrapper .feather {
-  height: 16px;
-  width: 16px;
-  color: white;
-}
-
-.icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-  border-radius: 0.4rem;
-  width: fit-content;
-  height: fit-content;
-}
-
-.icon-wrapper:hover {
-  background-color: var(--background-color);
   cursor: pointer;
 }
 
 /* Projects page */
 
-.project-wrapper {
+.project-wrapper-homepage {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 160px;
+  padding-top: 12rem;
+}
+
+.project-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
 }
 
 .project-title {
@@ -272,6 +332,7 @@ body {
   font-weight: 700;
   text-align: center;
   text-wrap: wrap;
+  padding: 0 2rem 0 2rem;
 }
 
 .project-body-wrapper {
@@ -284,19 +345,18 @@ body {
 }
 
 .image-previews h2 {
-    color: white;
+  color: white;
 }
 
 .project-body-wrapper-firefox {
-    display: flex;
-    justify-content: center;
-    white-space: wrap;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  white-space: wrap;
+  flex-wrap: wrap;
 }
 
 .key-features {
-  margin-top: 2rem;
-  margin-left: 2rem;
+  padding: 2rem 2rem 0 2rem;
   color: rgb(232, 241, 255);
   display: flex;
   gap: 1rem;
@@ -308,12 +368,13 @@ body {
   text-wrap: wrap;
   font-size: 0.9rem;
   font-weight: 400;
+  padding: 0 1rem 0 1rem;
 }
 
 .project-paragraph-wrapper {
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
+  padding: 0 1rem 0 1rem;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
@@ -396,73 +457,50 @@ body {
   color: white;
 }
 
-@media all and (min-width: 768px) and (max-width: 950px) {
-  .main-name {
-    font-size: 7rem;
+@media all and (min-width: 480px) and (max-width: 768px) {
+
+  #introText {
+    font-size: 1.5rem;
   }
 
-  .main-subheading {
-    margin-left: 22px;
-  }
-}
-
-@media all and (min-width: 480px) and (max-width: 700px) {
-  .main-name {
-    font-size: 5rem;
-  }
-
-  .main-subheading {
-    margin-left: 20px;
-  }
-}
-
-@media all and (max-width: 767px) {
-  .navbar {
-    left: 0;
-    top: 0;
-    padding-left: 12px;
-    padding-top: 40px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    width: 100%;
-    background-color: var(--background-color-nav);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    justify-content: center;
-  }
-
-  .footer {
-    justify-content: space-between;
-  }
-
-  .footer-contact-wrapper {
+  .pfp-wrapper {
+    padding: 15rem 2rem 10rem 2rem;
+    height: auto;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 0.5rem;
   }
 
-  .main-name {
-    font-size: 3.5rem;
-    font-weight: 700;
+  .audience-nav button {
+    font-size: 0.7rem;
   }
 
-  .main-subheading {
-    font-size: 0.9rem;
-    margin-left: 20px;
-    margin-top: 2rem;
+  .audience-wrapper {
+    width: auto;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (max-width: 480px) {
+
+  #introText {
+    font-size: 1rem;
   }
 
-  .second-details {
-    justify-content: center;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-left: 20px;
-    margin-top: 3rem;
+  .pfp-wrapper {
+    padding: 12rem 2rem 0 2rem;
+    height: auto;
+    flex-direction: column;
   }
 
-  .image-previews img {
-    width: 95vw;
-    border-radius: 0.1rem;
+  .audience-nav button {
+    font-size: 0.7rem;
+  }
+
+  .audience-wrapper {
+    width: auto;
+    padding-right: 2rem;
+  }
+
+  .audience-nav {
+    gap: 0.5rem;
   }
 }
