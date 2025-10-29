@@ -166,10 +166,10 @@ h2 {
 
 .pfp-wrapper {
   display: flex;
+  justify-content: center;
   padding-top: 12rem;
   flex-wrap: wrap;
   gap: 4rem;
-  justify-content: left;
   height: calc(100vh - 60vh);
   padding: 15rem 10rem 10rem 10rem;
 }
