@@ -264,7 +264,7 @@ h2 {
   gap: 0.5rem;
   align-items: flex-start;
   background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1rem;
@@ -338,6 +338,7 @@ h2 {
 .project-title {
   color: white;
   font-size: 2rem;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   text-align: center;
   text-wrap: wrap;
@@ -409,10 +410,15 @@ h2 {
   overflow: auto;
 }
 
-.image-previews img {
+.image-previews img:not(.non-16-9-img) {
   width: 85vw;
   aspect-ratio: 16/9;
   height: auto;
+  border-radius: 0.4rem;
+}
+
+.non-16-9-img {
+  width: 85vw;
   border-radius: 0.4rem;
 }
 
@@ -427,13 +433,14 @@ h2 {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   padding: 1rem;
   border-radius: 0.4rem;
   color: white;
   text-decoration: none;
   min-width: fit-content;
   max-width: fit-content;
+  backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 150ms;
 }
