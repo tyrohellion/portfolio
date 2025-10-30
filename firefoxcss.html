@@ -7,11 +7,12 @@
   <title>Evan Marchesani Projects</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style-v0.4.css" />
+  <link rel="stylesheet" href="style-v0.5.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
 </head>
 
@@ -42,10 +43,8 @@
           <i data-feather="external-link"></i>
         </a>
       </div>
-      <div class="image-previews">
-        <img src="images/firefoxcss.png" alt="preview" loading="lazy" />
-        <h2>Before</h2>
-        <img src="images/firefoxbefore.png" alt="preview" loading="lazy" />
+      <div class="gallery">
+        <a href="images/firefoxcss.png" class="glightbox"><img src="images/firefoxcss.png" alt=""></a>
       </div>
     </div>
     <footer class="site-footer">
@@ -56,6 +55,10 @@
   <script src="script-v0.1.js"></script>
   <script>
     feather.replace();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ touchNavigation: true, loop: true });
   </script>
 </body>
 

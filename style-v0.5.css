@@ -401,25 +401,66 @@ h2 {
   padding: 0 1rem 0 1rem;
 }
 
-.image-previews {
+.gallery {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 3rem;
-  overflow: auto;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 1rem 3rem 0 3rem;
 }
 
-.image-previews img:not(.non-16-9-img) {
-  width: 85vw;
-  aspect-ratio: 16/9;
+.glightbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.glightbox img {
+  border-radius: 0.5rem;
+  width: 15vw;
+  min-width: 150px;
+  max-width: 250px;
   height: auto;
-  border-radius: 0.4rem;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.non-16-9-img {
-  width: 85vw;
-  border-radius: 0.4rem;
+.glightbox:nth-child(1) {
+  transform: rotate(-4deg) translate(-10px, 10px);
+  z-index: 1;
+}
+
+.glightbox:nth-child(2) {
+  transform: rotate(2deg) translate(0, 0);
+  z-index: 2;
+}
+
+.glightbox:nth-child(3) {
+  transform: rotate(-2deg) translate(10px, -10px);
+  z-index: 3;
+}
+
+.glightbox:nth-child(4) {
+  transform: rotate(4deg) translate(20px, 5px);
+  z-index: 4;
+}
+
+.glightbox:nth-child(5) {
+  transform: rotate(-3deg) translate(-5px, -5px);
+  z-index: 5;
+}
+
+.glightbox:hover {
+  z-index: 10;
+  transform: scale(1.05) rotate(0deg) translate(0, 0);
+}
+
+.glightbox:hover img {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
 .project-action-buttons {
@@ -446,17 +487,8 @@ h2 {
 }
 
 .visit-button:hover {
-  background-color: white;
+  background-color: rgba(33, 34, 39, 0.247);
   transition: all 150ms;
-  border: 1px solid white;
-
-  .visit-text {
-    color: black;
-  }
-
-  .feather {
-    color: black;
-  }
 }
 
 .visit-text {
