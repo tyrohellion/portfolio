@@ -7,7 +7,7 @@
   <title>Evan Marchesani Projects</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style-v0.5.css" />
+  <link rel="stylesheet" href="style-v0.6.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,8 +27,64 @@
     </div>
 
     <div class="project-wrapper">
-      <div class="project-title">
-        ARCADIA, a full stack Rocket League Esports website
+      <div class="project-title-wrapper">
+        <div class="project-title-name">arcadia</div>
+        <div class="project-title-desc">Full Stack Rocket League Esports Website</div>
+      </div>
+      <div class="technologies-used-box">
+        <div class="technology-item-wrapper">
+          <img class="technology-item-icon" src="icons/nextjs.png"></img>
+          <div class="technology-item-name">Next.js</div>
+        </div>
+        <div class="technology-item-wrapper">
+          <img class="technology-item-icon" src="icons/css.png"></img>
+          <div class="technology-item-name">CSS</div>
+        </div>
+        <div class="technology-item-wrapper">
+          <img class="technology-item-icon" src="icons/github.png"></img>
+          <div class="technology-item-name">GitHub</div>
+        </div>
+        <div class="technology-item-wrapper">
+          <img class="technology-item-icon" src="icons/shiftrle.png"></img>
+          <div class="technology-item-name">ShiftRLE API</div>
+        </div>
+        <div class="technology-item-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-unplug-icon lucide-unplug">
+            <path d="m19 5 3-3" />
+            <path d="m2 22 3-3" />
+            <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z" />
+            <path d="M7.5 13.5 10 11" />
+            <path d="M10.5 16.5 13 14" />
+            <path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z" />
+          </svg>
+          <div class="technology-item-name">API Outage</div>
+        </div>
+        <div class="technology-item-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-radio-tower-icon lucide-radio-tower">
+            <path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9" />
+            <path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5" />
+            <circle cx="12" cy="9" r="2" />
+            <path d="M16.2 4.8c2 2 2.26 5.11.8 7.47" />
+            <path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1" />
+            <path d="M9.5 18h5" />
+            <path d="m8 22 4-11 4 11" />
+          </svg>
+          <div class="technology-item-name">Offline</div>
+        </div>
+      </div>
+      <div class="gallery">
+        <a href="images/1.png" class="glightbox"><img src="images/1.png" alt=""></a>
+        <a href="images/2.png" class="glightbox"><img src="images/2.png" alt=""></a>
+        <a href="images/3.png" class="glightbox"><img src="images/3.png" alt=""></a>
+        <a href="images/4.png" class="glightbox"><img src="images/4.png" alt=""></a>
+        <a href="images/5.png" class="glightbox"><img src="images/5.png" alt=""></a>
+        <a href="images/6.png" class="glightbox"><img src="images/6.png" alt=""></a>
+        <a href="images/7.png" class="glightbox"><img src="images/7.png" alt=""></a>
+        <a href="images/8.png" class="glightbox"><img src="images/8.png" alt=""></a>
       </div>
       <div class="project-body-wrapper">
         <div class="project-paragraph-wrapper">
@@ -94,16 +150,6 @@
           <i data-feather="external-link"></i>
         </a>
       </div>
-      <div class="gallery">
-        <a href="images/1.png" class="glightbox"><img src="images/1.png" alt=""></a>
-        <a href="images/2.png" class="glightbox"><img src="images/2.png" alt=""></a>
-        <a href="images/3.png" class="glightbox"><img src="images/3.png" alt=""></a>
-        <a href="images/4.png" class="glightbox"><img src="images/4.png" alt=""></a>
-        <a href="images/5.png" class="glightbox"><img src="images/5.png" alt=""></a>
-        <a href="images/6.png" class="glightbox"><img src="images/6.png" alt=""></a>
-        <a href="images/7.png" class="glightbox"><img src="images/7.png" alt=""></a>
-        <a href="images/8.png" class="glightbox"><img src="images/8.png" alt=""></a>
-      </div>
     </div>
     <footer class="site-footer">
       <p>Evan Marchesani | UX Designer</p>
@@ -113,7 +159,7 @@
   <script>
     feather.replace();
   </script>
-  <script src="script-v0.1.js"></script>
+  <script src="script-v0.2.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     const lightbox = GLightbox({ touchNavigation: true, loop: true });

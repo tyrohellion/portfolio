@@ -7,7 +7,7 @@
   <title>Evan Marchesani</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style-v0.5.css" />
+  <link rel="stylesheet" href="style-v0.6.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -95,7 +95,7 @@
           </div>
         </div>
       </a>
-            <a href="arcadiaredesign.html" class="arcadia-href">
+      <a href="arcadiaredesign.html" class="arcadia-href">
         <div class="project-card">
           <div class="project-card-logo-and-title">
             <h2>ARCADIA Redesign</h2>
@@ -116,7 +116,33 @@
       <p>Evan Marchesani | UX Designer</p>
     </footer>
   </div>
-  <script src="script-v0.1.js"></script>
+  <script src="script-v0.2.js"></script>
+  <script>
+    const introText = document.getElementById('introText');
+    const buttons = document.querySelectorAll('.audience-nav button');
+
+    const descriptions = {
+      anyone: "I create meaningful interfaces that put users first with the use of established principles and user research.",
+      recruiters: "Hi Recruiters, I am a User Experience Expert and Product Designer. I have 5 years of experience and am currently looking for a place to call home",
+      'design-directors': "Hi Design Directors, I am extremely flexible and able to take critism. I work best in groups and get along with everyone.",
+      engineer: "Engineers: Although I might have chosen a different path than you, I understand enough programming to be able to create engineer-centered designs."
+    };
+
+    function activateButton(audience) {
+      buttons.forEach(b => b.classList.remove('active'));
+      const btn = document.querySelector(`.audience-nav button[data-audience="${audience}"]`);
+      if (btn) btn.classList.add('active');
+      introText.textContent = descriptions[audience] || "";
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activateButton(btn.dataset.audience);
+      });
+    });
+
+    activateButton('anyone');
+  </script>
 </body>
 
 </html>
