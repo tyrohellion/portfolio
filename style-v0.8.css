@@ -1,9 +1,99 @@
 :root {
+  /* ===== Base Colors (Dark Mode) ===== */
+  --color-bg-primary: #111;
+  --color-bg-secondary: #000;
+  --color-bg-nav: rgba(49, 53, 62, 0.8);
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgb(116, 116, 116);
+  --color-text-muted: #aaa;
+  --color-text-light: rgb(210, 216, 224);
+  --color-text-mid: rgb(207, 207, 207);
+  --color-text-accent: rgb(232, 241, 255);
+  --color-text-faded: #ffffff8f;
+  --color-text-dimmed: #ffffffd0;
+
+  /* ===== Borders ===== */
+  --color-border-light: rgba(255, 255, 255, 0.15);
+
+  /* ===== UI Elements ===== */
+  --color-navbar-bg: #111111c7;
+  --color-nav-hover-bg: rgba(33, 34, 39, 0.815);
+  --color-icon-bg: rgb(25, 25, 31);
+  --color-icon-hover-bg: rgba(255, 255, 255, 0.2);
+  --color-card-bg: rgba(0, 0, 0, 0);
+  --color-card-hover-bg: rgba(33, 34, 39, 0.247);
+  --color-surface-bg: #46577b3e;
+  --color-preview-bg: rgba(0, 0, 0, 0.9);
+  --color-preview-hover-bg: rgba(0, 0, 0, 0.2);
+
+  /* ===== Gradients ===== */
+  --gradient-bg: radial-gradient(
+    circle,
+    var(--color-bg-primary) 0%,
+    var(--color-bg-secondary) 100%
+  );
+  --gradient-grid: radial-gradient(
+    rgba(38, 40, 46, 0.99) 1.4px,
+    transparent 1px
+  );
+
+  /* ===== Shadows ===== */
+  --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --shadow-heavy: 0 12px 30px rgba(0, 0, 0, 0.5);
+
+  /* ===== svg invert ===== */
+  --keep-svg-color: invert(0);
+
+  /* ===== Font ===== */
   font-family: Inter, sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
   font-family: "Space Grotesk", sans-serif;
-  --background-color: rgb(12, 13, 15);
-  --background-color-nav: rgba(49, 53, 62, 0.8);
+}
+
+/* =====================
+   LIGHT MODE THEME
+   ===================== */
+[data-theme="light"] {
+  --color-bg-primary: #f9fafb;
+  --color-bg-secondary: #ffffff;
+  --color-bg-nav: rgba(255, 255, 255, 0.8);
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+  --color-text-light: #4b5563;
+  --color-text-mid: #1f2937;
+  --color-text-accent: #0d214b;
+  --color-text-faded: #4b55638f;
+  --color-text-dimmed: #4b5563d0;
+
+  --color-border-light: rgba(0, 0, 0, 0.1);
+
+  --color-navbar-bg: #ffffffc7;
+  --color-nav-hover-bg: rgba(229, 231, 235, 0.8);
+  --color-icon-bg: #f3f4f6;
+  --color-icon-hover-bg: rgba(0, 0, 0, 0.05);
+  --color-card-bg: #ffffff;
+  --color-card-hover-bg: #f3f4f6;
+  --color-surface-bg: #b6c6e8;
+  --color-preview-bg: rgba(255, 255, 255, 0.9);
+  --color-preview-hover-bg: rgba(0, 0, 0, 0.05);
+
+  --gradient-bg: radial-gradient(
+    circle,
+    var(--color-bg-primary) 0%,
+    var(--color-bg-secondary) 100%
+  );
+  --gradient-grid: radial-gradient(
+    rgba(200, 200, 200, 0.5) 1.4px,
+    transparent 1px
+  );
+
+  --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-heavy: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  --invert-svg-color: invert(1);
 }
 
 @supports (font-variation-settings: normal) {
@@ -13,10 +103,9 @@
 }
 
 html {
-  background: radial-gradient(circle, #111 0%, #000 100%);
+  background: var(--gradient-bg);
   background-attachment: fixed;
   color-scheme: dark;
-  overscroll-behavior: none;
 }
 
 * {
@@ -29,7 +118,7 @@ body {
   margin: 0;
   min-height: 100vh;
   position: relative;
-  color: white;
+  color: var(--color-text-primary);
   background: none;
 }
 
@@ -45,8 +134,8 @@ body {
   display: block;
   width: 100%;
   min-height: 100vh;
-  background-color: #111;
-  background-image: radial-gradient(rgba(38, 40, 46, 0.99) 1.4px, transparent 1px);
+  background-color: var(--color-bg-primary);
+  background-image: var(--gradient-grid);
   background-size: 35px 35px;
 }
 
@@ -83,10 +172,10 @@ h2 {
   justify-content: center;
   white-space: nowrap;
   font-family: Inter, sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   align-items: center;
   background: none;
-  color: rgb(116, 116, 116);
+  color: var(--color-text-muted);
   font-size: 1rem;
   border: none;
   gap: 1rem;
@@ -94,7 +183,7 @@ h2 {
 }
 
 .audience-nav button.active {
-  color: #ffffff;
+  color: var(--color-text-primary);
 }
 
 .site-header h1 {
@@ -105,7 +194,7 @@ h2 {
 .site-header nav button {
   background: none;
   border: none;
-  color: #aaa;
+  color: var(--color-text-muted);
   margin-right: 1rem;
   font-size: 1rem;
   cursor: pointer;
@@ -113,7 +202,7 @@ h2 {
 
 .site-header nav button:hover,
 .site-header nav button.active {
-  color: white;
+  color: var(--color-text-primary);
 }
 
 .site-footer {
@@ -142,13 +231,13 @@ h2 {
   width: min-content;
   border-radius: 5rem;
   padding: 0.5rem 0.7rem 0.5rem 0.7rem;
-  background-color: #111111c7;
+  background-color: var(--color-navbar-bg);
   backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--color-border-light);
 }
 
 .nav-item {
-  color: white;
+  color: var(--color-text-primary);
   font-family: Inter, sans-serif;
   font-size: 0.8rem;
   width: fit-content;
@@ -158,10 +247,14 @@ h2 {
   padding: 0.5rem 1rem 0.5rem 1rem;
   text-decoration: none;
   transition: all 150ms;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  margin: 0;
 }
 
 .nav-item:hover {
-  background-color: rgba(33, 34, 39, 0.815);
+  background-color: var(--color-nav-hover-bg);
   transition: all 150ms;
   cursor: pointer;
 }
@@ -195,6 +288,7 @@ h2 {
   height: 100%;
   object-fit: cover;
   transition: opacity 0.3s ease;
+  filter: var(--invert-svg-color);
 }
 
 .img-png {
@@ -232,7 +326,7 @@ h2 {
   align-items: center;
   width: 48px;
   height: 38px;
-  background-color: rgb(25, 25, 31);
+  background-color: var(--color-icon-bg);
   border-radius: 0.5rem;
   transition: all 150ms;
 }
@@ -242,7 +336,7 @@ h2 {
 }
 
 .icon-container:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-icon-hover-bg);
   transition: all 150ms;
 }
 
@@ -263,10 +357,10 @@ h2 {
   flex-direction: column;
   gap: 0.5rem;
   align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--color-card-bg);
   backdrop-filter: blur(3px);
   border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--color-border-light);
   padding: 1rem;
   position: relative;
   transition: all 150ms;
@@ -282,7 +376,7 @@ h2 {
 .project-card h2 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: white;
+  color: var(--color-text-primary);
 }
 
 .project-card-logo-and-title {
@@ -300,7 +394,7 @@ h2 {
 .project-card-title p {
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgb(210, 216, 224);
+  color: var(--color-text-light);
 }
 
 .project-card-icons {
@@ -309,7 +403,7 @@ h2 {
 }
 
 .project-card:hover {
-  background-color: rgba(33, 34, 39, 0.247);
+  background-color: var(--color-card-hover-bg);
   transition: all 150ms;
   cursor: pointer;
 }
@@ -350,7 +444,7 @@ h2 {
 }
 
 .project-title-name {
-  color: white;
+  color: var(--color-text-primary);
   font-size: 1.1rem;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
@@ -360,7 +454,7 @@ h2 {
 }
 
 .project-title-desc {
-  color: white;
+  color: var(--color-text-primary);
   font-size: 2rem;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
@@ -381,7 +475,7 @@ h2 {
   flex-direction: column;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.05rem;
-  color: rgb(207, 207, 207);
+  color: var(--color-text-mid);
   font-weight: 700;
   padding: 1rem 1rem 1rem 1rem;
   gap: 1rem;
@@ -392,7 +486,7 @@ h2 {
   display: flex;
   width: 100%;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .technologies-used-box {
@@ -403,7 +497,7 @@ h2 {
   height: fit-content;
   overflow-x: auto;
   overflow-y: hidden;
-  background-color: rgba(0, 0, 0, 0.247);
+  background-color: var(--color-surface-bg);
   backdrop-filter: blur(3px);
   margin: 0 1rem 0 1rem;
   border-radius: 1rem;
@@ -425,7 +519,7 @@ h2 {
   font-family: Inter, sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #ffffff8f;
+  color: var(--color-text-secondary);
 }
 
 .static-mockup-images {
@@ -442,7 +536,7 @@ h2 {
   gap: 2rem;
   padding: 2rem 2rem 2rem 2rem;
   margin: 0 1rem 0 1rem;
-  background-color: rgba(0, 0, 0, 0.247);
+  background-color: var(--color-surface-bg);
   backdrop-filter: blur(3px);
   border-radius: 1rem;
   flex-wrap: wrap;
@@ -457,12 +551,12 @@ h2 {
 }
 
 .project-goal-title {
-  color: white;
+  color: var(--color-text-primary);
   font-size: 1.2rem;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--color-border-light);
   white-space: nowrap;
   width: 100%;
   padding: 0.5rem;
@@ -498,7 +592,7 @@ h2 {
 }
 
 .project-goal-body-final {
-  color: #ffffffd0;
+  color: var(--color-text-dimmed);
   font-size: 1rem;
   text-align: left;
   text-wrap: wrap;
@@ -518,7 +612,7 @@ h2 {
 
 .key-features {
   padding: 2rem 2rem 0 2rem;
-  color: rgb(232, 241, 255);
+  color: var(--color-text-accent);
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -530,6 +624,7 @@ h2 {
   font-size: 0.9rem;
   font-weight: 400;
   padding: 0 1rem 0 1rem;
+  color: var(--color-text-primary);
 }
 
 .project-paragraph-wrapper {
@@ -542,7 +637,7 @@ h2 {
 }
 
 .project-body {
-  color: #ffffffd0;
+  color: var(--color-text-dimmed);
   font-size: 1rem;
   text-align: left;
   text-wrap: wrap;
@@ -550,7 +645,7 @@ h2 {
 }
 
 .project-goal-body {
-  color: #ffffffd0;
+  color: var(--color-text-dimmed);
   font-size: 1rem;
   text-align: left;
   text-wrap: wrap;
@@ -588,7 +683,7 @@ h2 {
 }
 
 .proposal-preview:hover::after {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--color-preview-hover-bg);
   backdrop-filter: blur(2px);
 }
 
@@ -603,8 +698,8 @@ h2 {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
+  background-color: var(--color-preview-bg);
+  color: var(--color-text-primary);
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -614,7 +709,6 @@ h2 {
   opacity: 1;
   transform: scale(1.05);
 }
-
 
 .gallery {
   position: relative;
@@ -640,7 +734,7 @@ h2 {
   max-width: 250px;
   height: auto;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -670,12 +764,12 @@ h2 {
 }
 
 .glightbox:hover {
-  z-index: 10;
+  z-index: 6;
   transform: scale(1.05) rotate(0deg) translate(0, 0);
 }
 
 .glightbox:hover img {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-heavy);
 }
 
 .project-action-buttons {
@@ -690,7 +784,7 @@ h2 {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--color-card-bg);
   padding: 1rem;
   border-radius: 0.4rem;
   color: white;
@@ -698,17 +792,17 @@ h2 {
   min-width: fit-content;
   max-width: fit-content;
   backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--color-border-light);
   transition: all 150ms;
 }
 
 .visit-button:hover {
-  background-color: rgba(33, 34, 39, 0.247);
+  background-color: var(--color-nav-hover-bg);
   transition: all 150ms;
 }
 
 .visit-text {
-  color: white;
+  color: var(--color-text-primary);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -718,11 +812,10 @@ h2 {
 .visit-button .feather {
   width: 16px;
   height: 16px;
-  color: white;
+  color: var(--color-text-primary);
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
-
   #introText {
     font-size: 1.5rem;
   }
@@ -744,7 +837,6 @@ h2 {
 }
 
 @media all and (max-width: 480px) {
-
   #introText {
     font-size: 1rem;
   }

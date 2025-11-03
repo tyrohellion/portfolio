@@ -7,7 +7,14 @@
   <title>Evan Marchesani Projects</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style-v0.7.css" />
+  <script>
+    (function() {
+      const t = localStorage.getItem("theme");
+      const s = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t || s);
+    })();
+  </script>
+  <link rel="stylesheet" href="style-v0.8.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +30,7 @@
         <a href="index.html" class="nav-item">Home</a>
         <a href="https://github.com/tyrohellion" class="nav-item" target="_blank">Github</a>
         <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item" target="_blank">Linkedin</a>
+        <button class="nav-item" onclick="toggleTheme()">Theme</button>
       </div>
     </div>
     <div class="project-align-middle">
@@ -104,7 +112,7 @@
     </footer>
   </div>
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="script-v0.2.js"></script>
+  <script src="script-v0.3.js"></script>
   <script>
     feather.replace();
   </script>
