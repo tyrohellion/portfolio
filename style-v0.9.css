@@ -5,13 +5,14 @@
   --color-bg-nav: rgba(49, 53, 62, 0.8);
 
   --color-text-primary: #ffffff;
-  --color-text-secondary: rgb(116, 116, 116);
+  --color-text-secondary: rgb(167, 167, 167);
   --color-text-muted: #aaa;
   --color-text-light: rgb(210, 216, 224);
   --color-text-mid: rgb(207, 207, 207);
   --color-text-accent: rgb(232, 241, 255);
   --color-text-faded: #ffffff8f;
   --color-text-dimmed: #ffffffd0;
+  --transparent: #00000000;
 
   /* ===== Borders ===== */
   --color-border-light: rgba(255, 255, 255, 0.15);
@@ -28,15 +29,11 @@
   --color-preview-hover-bg: rgba(0, 0, 0, 0.2);
 
   /* ===== Gradients ===== */
-  --gradient-bg: radial-gradient(
-    circle,
-    var(--color-bg-primary) 0%,
-    var(--color-bg-secondary) 100%
-  );
-  --gradient-grid: radial-gradient(
-    rgba(38, 40, 46, 0.99) 1.4px,
-    transparent 1px
-  );
+  --gradient-bg: radial-gradient(circle,
+      var(--color-bg-primary) 0%,
+      var(--color-bg-secondary) 100%);
+  --gradient-grid: radial-gradient(rgba(63, 67, 77, 0.99) 1.4px,
+      transparent 1px);
 
   /* ===== Shadows ===== */
   --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -55,45 +52,41 @@
    LIGHT MODE THEME
    ===================== */
 [data-theme="light"] {
-  --color-bg-primary: #f9fafb;
+  --color-bg-primary: #d9e2eb;
   --color-bg-secondary: #ffffff;
   --color-bg-nav: rgba(255, 255, 255, 0.8);
 
   --color-text-primary: #111827;
-  --color-text-secondary: #374151;
+  --color-text-secondary: #282f3a;
   --color-text-muted: #6b7280;
   --color-text-light: #4b5563;
   --color-text-mid: #1f2937;
   --color-text-accent: #0d214b;
   --color-text-faded: #4b55638f;
-  --color-text-dimmed: #4b5563d0;
+  --color-text-dimmed: #2d333bd0;
 
   --color-border-light: rgba(0, 0, 0, 0.1);
 
   --color-navbar-bg: #ffffffc7;
-  --color-nav-hover-bg: rgba(229, 231, 235, 0.8);
+  --color-nav-hover-bg: rgba(229, 231, 235, 0.952);
   --color-icon-bg: #f3f4f6;
   --color-icon-hover-bg: rgba(0, 0, 0, 0.05);
-  --color-card-bg: #ffffff;
+  --color-card-bg: #ffffff33;
   --color-card-hover-bg: #f3f4f6;
-  --color-surface-bg: #b6c6e8;
+  --color-surface-bg: #b6c6e896;
   --color-preview-bg: rgba(255, 255, 255, 0.9);
   --color-preview-hover-bg: rgba(0, 0, 0, 0.05);
 
-  --gradient-bg: radial-gradient(
-    circle,
-    var(--color-bg-primary) 0%,
-    var(--color-bg-secondary) 100%
-  );
-  --gradient-grid: radial-gradient(
-    rgba(200, 200, 200, 0.5) 1.4px,
-    transparent 1px
-  );
+  --gradient-bg: radial-gradient(circle,
+      var(--color-bg-primary) 0%,
+      var(--color-bg-secondary) 100%);
+  --gradient-grid: radial-gradient(rgba(154, 166, 194, 0.99) 1.4px,
+      transparent 1px);
 
   --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow-heavy: 0 12px 30px rgba(0, 0, 0, 0.15);
 
-  --invert-svg-color: invert(1);
+  --invert-svg-color: invert(0);
 }
 
 @supports (font-variation-settings: normal) {
@@ -149,6 +142,8 @@ h2 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   font-size: 2rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(2px);
 }
 
 .audience-nav {
@@ -156,6 +151,8 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(2px);
 }
 
 .audience-wrapper {
@@ -288,6 +285,8 @@ h2 {
   height: 100%;
   object-fit: cover;
   transition: opacity 0.3s ease;
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
   filter: var(--invert-svg-color);
 }
 
@@ -429,7 +428,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 5rem;
   padding-top: 12rem;
   padding-bottom: 12rem;
   overflow: hidden;
@@ -451,6 +450,8 @@ h2 {
   text-align: center;
   white-space: nowrap;
   padding: 0 2rem 0 2rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(2px);
 }
 
 .project-title-desc {
@@ -460,6 +461,8 @@ h2 {
   font-weight: 700;
   text-wrap: wrap;
   padding: 0 2rem 0 2rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(2px);
 }
 
 .project-page-header-boxes-wrapper {
@@ -542,6 +545,14 @@ h2 {
   flex-wrap: wrap;
 }
 
+.section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .project-goal-tile {
   display: flex;
   flex-direction: column;
@@ -566,11 +577,15 @@ h2 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
+  background-color: var(--transparent);
+  backdrop-filter: blur(2px);
 }
 
 .project-title-h3 {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 650;
+  background-color: var(--transparent);
+  backdrop-filter: blur(2px);
 }
 
 .project-body-wrapper {
@@ -588,15 +603,17 @@ h2 {
   align-items: first baseline;
   gap: 1rem;
   padding: 0 2rem 0 2rem;
-  margin-bottom: 2rem;
 }
 
 .project-goal-body-final {
-  color: var(--color-text-dimmed);
+  color: var(--color-text-mid);
   font-size: 1rem;
   text-align: left;
   text-wrap: wrap;
-  padding: 0 2rem 0 2rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .image-previews h2 {
@@ -608,6 +625,7 @@ h2 {
   justify-content: center;
   white-space: wrap;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .key-features {
@@ -617,6 +635,8 @@ h2 {
   gap: 1rem;
   flex-direction: column;
   font-size: 0.9rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
 }
 
 .project-conculsion {
@@ -625,6 +645,8 @@ h2 {
   font-weight: 400;
   padding: 0 1rem 0 1rem;
   color: var(--color-text-primary);
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
 }
 
 .project-paragraph-wrapper {
@@ -633,19 +655,32 @@ h2 {
   padding: 0 1rem 0 1rem;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
 }
 
 .project-body {
-  color: var(--color-text-dimmed);
+  color: var(--color-text-mid);
   font-size: 1rem;
   text-align: left;
   text-wrap: wrap;
   padding: 0 1rem 0 1rem;
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
+  border-radius: 0.5rem;
 }
 
 .project-goal-body {
-  color: var(--color-text-dimmed);
+  color: var(--color-text-mid);
+  font-size: 1rem;
+  text-align: left;
+  text-wrap: wrap;
+  background-color: var(--transparent);
+  backdrop-filter: blur(3px);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.project-goal-body-card-text {
+  color: var(--color-text-mid);
   font-size: 1rem;
   text-align: left;
   text-wrap: wrap;
@@ -656,9 +691,10 @@ h2 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 45%;
+  width: 40%;
   border-radius: 0.5rem;
   overflow: hidden;
+  box-shadow: var(--shadow-heavy);
 }
 
 .proposal-preview-img {
@@ -734,7 +770,7 @@ h2 {
   max-width: 250px;
   height: auto;
   object-fit: cover;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-heavy);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
