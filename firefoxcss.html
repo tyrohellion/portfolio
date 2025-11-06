@@ -2,124 +2,237 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Evan Marchesani Projects</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>
-    (function() {
-      const t = localStorage.getItem("theme");
-      const s = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", t || s);
-    })();
-  </script>
-  <link rel="stylesheet" href="style-v0.9.css" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>EM | FirefoxCSS</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        (function () {
+            const t = localStorage.getItem("theme");
+            const s = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", t || s);
+        })();
+    </script>
+    <link rel="stylesheet" href="style-v1.0.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="grid">
-    <div class="navbar-background-wrapper">
-      <div class="navbar">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="https://github.com/tyrohellion" class="nav-item" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item" target="_blank">Linkedin</a>
-        <button class="nav-item" onclick="toggleTheme()">Theme</button>
-      </div>
-    </div>
-    <div class="project-align-middle">
-      <div class="project-wrapper">
-        <div class="project-title-wrapper">
-          <div class="project-title-name">
-            arcadia
-          </div>
-          <div class="project-title-desc">
-            Custom FireFox CSS theme
-          </div>
-        </div>
-        <div class="technologies-used-box">
-          <div class="technology-item-wrapper">
-            <img class="technology-item-icon" src="icons/css.png"></img>
-            <div class="technology-item-name">CSS</div>
-          </div>
-          <div class="technology-item-wrapper">
-            <img class="technology-item-icon" src="icons/github.png"></img>
-            <div class="technology-item-name">GitHub</div>
-          </div>
-          <div class="technology-item-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-cog-icon lucide-cog">
-              <path d="M11 10.27 7 3.34" />
-              <path d="m11 13.73-4 6.93" />
-              <path d="M12 22v-2" />
-              <path d="M12 2v2" />
-              <path d="M14 12h8" />
-              <path d="m17 20.66-1-1.73" />
-              <path d="m17 3.34-1 1.73" />
-              <path d="M2 12h2" />
-              <path d="m20.66 17-1.73-1" />
-              <path d="m20.66 7-1.73 1" />
-              <path d="m3.34 17 1.73-1" />
-              <path d="m3.34 7 1.73 1" />
-              <circle cx="12" cy="12" r="2" />
-              <circle cx="12" cy="12" r="8" />
-            </svg>
-            <div class="technology-item-name">Custom javascript config</div>
-          </div>
-          <div class="technology-item-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-refresh-cw-icon lucide-refresh-cw">
-              <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-              <path d="M21 3v5h-5" />
-              <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-              <path d="M8 16H3v5" />
-            </svg>
-            <div class="technology-item-name">Constantly maintained</div>
-          </div>
-        </div>
-        <div class="gallery">
-          <a href="images/firefoxcss.png" class="glightbox"><img src="images/firefoxcss.png" alt=""></a>
-          <a href="images/arcadiapreview.gif" class="glightbox"><img src="images/arcadiapreview.gif" alt=""
-              loading="lazy"></a>
-        </div>
-        <div class="project-body-wrapper-firefox">
-          <div class="project-paragraph-wrapper">
-            <div class="project-body">
-              FireFox theme using CSS to overhaul the UI of the browser. Written completely in CSS and a JS
-              configuration
-              file.
+    <div class="grid">
+        <div class="navbar-background-wrapper">
+            <div class="navbar">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="https://github.com/tyrohellion" class="nav-item" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item" target="_blank">Linkedin</a>
+                <button class="nav-item" onclick="toggleTheme()">Theme</button>
             </div>
-          </div>
         </div>
-        <div class="project-action-buttons">
-          <a href="https://github.com/tyrohellion/arcadia" class="visit-button" target="_blank">
-            <div class="visit-text">GitHub Repo</div>
-            <i data-feather="external-link"></i>
-          </a>
+        <div class="project-align-middle">
+            <div class="project-wrapper">
+                <div class="project-title-wrapper">
+                    <div class="project-title-name">
+                        arcadia
+                    </div>
+                    <div class="project-title-desc">
+                        Custom FireFox CSS theme and User.js
+                    </div>
+                </div>
+                <div class="technologies-used-box">
+                    <div class="role-headings-container">
+                        <div class="role-title-text">Roles</div>
+                        <div class="role-item-wrapper">
+                            <div class="technology-item-name">User Interface Designer</div>
+                            <div class="technology-item-name">CSS Engineer</div>
+                            <div class="technology-item-name">Project Maintainer</div>
+                        </div>
+                    </div>
+                    <div class="role-headings-container">
+                        <div class="role-title-text">Tools</div>
+                        <div class="technology-item-wrapper">
+                            <img class="technology-item-icon" src="icons/css.png"></img>
+                            <div class="technology-item-name">CSS</div>
+                        </div>
+                        <div class="technology-item-wrapper">
+                            <img class="technology-item-icon" src="icons/github.svg"></img>
+                            <div class="technology-item-name">GitHub</div>
+                        </div>
+                        <div class="technology-item-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-cog-icon lucide-cog">
+                                <path d="M11 10.27 7 3.34" />
+                                <path d="m11 13.73-4 6.93" />
+                                <path d="M12 22v-2" />
+                                <path d="M12 2v2" />
+                                <path d="M14 12h8" />
+                                <path d="m17 20.66-1-1.73" />
+                                <path d="m17 3.34-1 1.73" />
+                                <path d="M2 12h2" />
+                                <path d="m20.66 17-1.73-1" />
+                                <path d="m20.66 7-1.73 1" />
+                                <path d="m3.34 17 1.73-1" />
+                                <path d="m3.34 7 1.73 1" />
+                                <circle cx="12" cy="12" r="2" />
+                                <circle cx="12" cy="12" r="8" />
+                            </svg>
+                            <div class="technology-item-name">User.js</div>
+                        </div>
+                    </div>
+                    <div class="role-headings-container">
+                        <div class="role-title-text">Deliverables</div>
+                        <div class="technology-item-wrapper">
+                            <div class="technology-item-name">Fully Featured Firefox Theme</div>
+                        </div>
+                        <div class="technology-item-wrapper">
+                            <div class="technology-item-name">User.js Custom Config</div>
+                        </div>
+                        <div class="technology-item-wrapper">
+                            <div class="technology-item-name">GitHub Installation Tutorial</div>
+                        </div>
+                    </div>
+                    <div class="role-headings-container">
+                        <div class="role-title-text">Duration</div>
+                        <div class="technology-item-wrapper">
+                            <div class="technology-item-name">2022-Present</div>
+                        </div>
+                    </div>
+                </div>
+                <img class="static-mockup-images" src="images/firefoxcss/firefoxcss.png">
+                <div class="project-body-wrapper-firefox">
+                    <div class="project-title-desc">Overview</div>
+                    <div class="project-paragraph-wrapper">
+                        <div class="project-body">
+                            I fell in love with the Firefox web browser because of the entire UI being written in CSS.
+                            I've always liked CSS and wanted to take on a challange of redesigning the firefox UI with
+                            my knowledge of CSS.
+                        </div>
+                    </div>
+                </div>
+                <div class="section-container">
+                    <div class="project-title-desc">Project goals</div>
+                    <div class="project-goals-wrapper">
+                        <div class="project-goal-tile">
+                            <div class="project-goal-title">Easy Installation</div>
+                            <div class="project-goal-body-card-text">I wanted to create a project that let's even
+                                non-tech savy users install and enjoy the project. So many technical things aren't
+                                accessible for casual users because it's too complicated to setup.</div>
+                        </div>
+                        <div class="project-goal-tile">
+                            <div class="project-goal-title">Maintainance</div>
+                            <div class="project-goal-body-card-text">After researching other FirefoxCSS themes the
+                                community has made, I realized that they go unmaintained often and usually break after a
+                                Firefox update from Mozilla. My goal was to update the theme whenver something in the UI
+                                breaks so users of the project have someone to rely on.</div>
+                        </div>
+                        <div class="project-goal-tile">
+                            <div class="project-goal-title">Minimal</div>
+                            <div class="project-goal-body-card-text">Above all I wanted a design that I was happy with.
+                                I wanted a minimal browser interface that didn't get in the way and didn't have any
+                                distracting icons.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-container">
+                    <div class="project-title-desc">Process</div>
+                    <div class="project-subheading-body-wrapper">
+                        <div class="project-title-h2">Starting point</div>
+                        <div class="project-goal-body">I found an abandoned FirefoxCSS project on GitHub that had a lot
+                            of the elements that I was trying to replicate. It had a lot of broken parts, but it was
+                            still a good starting place. I decided to fork the project and get started on fixing it up!
+                        </div>
+                    </div>
+                    <a href="https://github.com/BlueFalconHD/SimpleFox-Feather/" class="proposal-preview"
+                        target="_blank">
+                        <img class="proposal-preview-img" src="images/firefoxcss/abandonedproject.png">
+                        <button class="preview-button">View old project</button>
+                    </a>
+                </div>
+                <div class="section-container">
+                    <div class="project-subheading-body-wrapper">
+                        <div class="project-title-h2">Minimum Viable Product</div>
+                        <div class="project-title-h3">Fixing Broken Elements</div>
+                        <div class="project-goal-body">A lot of elements of the UI had been naturally overwritten or
+                            changed by Firefox updates so I took on the task of rewritting elements or adding new CSS
+                            styles.</div>
+                        <img class="static-mockup-images" src="images/firefoxcss/main.png">
+                        <img class="static-mockup-images" src="images/firefoxcss/tabpreviews.png">
+                    </div>
+                </div>
+                <div class="project-subheading-body-wrapper">
+                    <div class="project-title-h3">Adding More Functionality</div>
+                    <div class="project-goal-body">Although this original project was great, it was a little too minimal
+                        even for my taste. With this theme there was no way of accessing tracking protection for a
+                        certain website or cookie settings because of the removal of certain buttons. They also didn't
+                        have any back or forward buttons which I wanted back in the design.</div>
+                    <img class="static-mockup-images" src="images/firefoxcss/permissionsmenu.png">
+                </div>
+                <div class="project-subheading-body-wrapper">
+                    <div class="project-title-h3">Replacing Icons</div>
+                    <div class="project-goal-body">Next I replaced and added some new icons for the browser UI. I tried
+                        to use icons that had a really nice look together.</div>
+                    <img class="static-mockup-images" src="images/firefoxcss/replacedicons.png">
+                </div>
+                <div class="project-subheading-body-wrapper">
+                    <div class="project-title-h3">User.js and Installation Tutorial</div>
+                    <div class="project-goal-body">Firefox has this awesome feature where you can have a User.js config
+                        file that defines certain behaviors the browser should follow. One of these behaviors is the
+                        required manual config variables that is needed to allow custom themes. I included this in the
+                        User.js file to make it more user-friendly and painless. On my GitHub repository for this
+                        project I have a formatted readme file with all the installation instructions. Super easy to
+                        follow and setup.</div>
+                    <img class="static-mockup-images" src="images/firefoxcss/tutorial.png">
+                </div>
+                <div class="section-container">
+                    <div class="project-title-desc">Final Result</div>
+                    <div class="project-goal-body-final">I achieved my goal of having a project that is constantly
+                        maintained and minimal in nature. I learned a lot about this project and what it means to be
+                        reliable for other people. This project is still ongoing and can be used by anyone by going to
+                        my GitHub!</div>
+                    <div class="gallery">
+                        <a href="images/firefoxcss/firefoxcss.png" class="glightbox"><img
+                                src="images/firefoxcss/firefoxcss.png" alt=""></a>
+                        <a href="images/firefoxcss/main.png" class="glightbox"><img src="images/firefoxcss/main.png"
+                                alt=""></a>
+                        <a href="images/firefoxcss/tabpreviews.png" class="glightbox"><img
+                                src="images/firefoxcss/tabpreviews.png" alt=""></a>
+                        <a href="images/firefoxcss/permissionsmenu.png" class="glightbox"><img
+                                src="images/firefoxcss/permissionsmenu.png" alt=""></a>
+                        <a href="images/firefoxcss/replacedicons.png" class="glightbox"><img
+                                src="images/firefoxcss/replacedicons.png" alt=""></a>
+                    </div>
+                    <div class="project-action-buttons">
+                        <a href="https://github.com/tyrohellion/arcadia/" class="visit-button" target="_blank">
+                            <div class="visit-text">GitHub Repo</div>
+                            <i data-feather="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-container">
+                    <div class="project-title-desc">Takeaways</div>
+                    <div class="project-goal-body-final">Reliability is extremely important for people. I got good
+                        experience with debugging interfaces along with honing my CSS skills more and more.</div>
+                </div>
+            </div>
         </div>
-      </div>
+        <footer class="site-footer">
+            <p>Evan Marchesani | UX Designer</p>
+        </footer>
     </div>
-    <footer class="site-footer">
-      <p>Evan Marchesani | UX Designer</p>
-    </footer>
-  </div>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script src="script-v0.3.js"></script>
-  <script>
-    feather.replace();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script>
-    const lightbox = GLightbox({ touchNavigation: true, loop: true });
-  </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script-v0.4.js"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({ touchNavigation: true, loop: true });
+    </script>
 </body>
 
 </html>

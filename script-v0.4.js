@@ -18,6 +18,12 @@ if (btn) {
   btn.addEventListener("click", toggleTheme);
 }
 
+if (!localStorage.getItem("theme")) {
+  setTheme("light");
+} else {
+  setTheme(localStorage.getItem("theme"));
+}
+
 function animate() {
   currentX += (targetX - currentX) * 0.05;
   currentY += (targetY - currentY) * 0.05;

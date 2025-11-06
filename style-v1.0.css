@@ -24,7 +24,7 @@
   --color-icon-hover-bg: rgba(255, 255, 255, 0.2);
   --color-card-bg: rgba(0, 0, 0, 0);
   --color-card-hover-bg: rgba(33, 34, 39, 0.247);
-  --color-surface-bg: #46577b3e;
+  --color-surface-bg: #98acda3e;
   --color-preview-bg: rgba(0, 0, 0, 0.9);
   --color-preview-hover-bg: rgba(0, 0, 0, 0.2);
 
@@ -251,7 +251,7 @@ h2 {
 }
 
 .nav-item:hover {
-  background-color: var(--color-nav-hover-bg);
+  background-color: var(--color-surface-bg);
   transition: all 150ms;
   cursor: pointer;
 }
@@ -376,6 +376,7 @@ h2 {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-text-primary);
+  backdrop-filter: none;
 }
 
 .project-card-logo-and-title {
@@ -402,7 +403,7 @@ h2 {
 }
 
 .project-card:hover {
-  background-color: var(--color-card-hover-bg);
+  background-color: var(--color-surface-bg);
   transition: all 150ms;
   cursor: pointer;
 }
@@ -415,7 +416,7 @@ h2 {
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
-  padding-top: 12rem;
+  padding-top: 10rem;
 }
 
 .project-align-middle {
@@ -513,9 +514,22 @@ h2 {
   align-items: center;
 }
 
+.role-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .technology-item-icon {
   height: 24px;
   width: 24px;
+}
+
+.note-text {
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .technology-item-name {
@@ -570,7 +584,7 @@ h2 {
   border-bottom: 1px solid var(--color-border-light);
   white-space: nowrap;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 .project-title-h2 {
@@ -691,7 +705,7 @@ h2 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 50%;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-heavy);
@@ -833,7 +847,7 @@ h2 {
 }
 
 .visit-button:hover {
-  background-color: var(--color-nav-hover-bg);
+  background-color: var(--color-surface-bg);
   transition: all 150ms;
 }
 

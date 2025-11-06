@@ -8,13 +8,13 @@
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
-  (function() {
-    const t = localStorage.getItem("theme");
-    const s = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", t || s);
-  })();
-</script>
-  <link rel="stylesheet" href="style-v0.9.css" />
+    (function () {
+      const t = localStorage.getItem("theme");
+      const s = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t || s);
+    })();
+  </script>
+  <link rel="stylesheet" href="style-v1.0.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,7 +55,7 @@
       <a href="arcadia.html" class="arcadia-href">
         <div class="project-card">
           <div class="project-card-logo-and-title">
-            <h2>ARCADIA</h2>
+            <h2>Arcadia</h2>
           </div>
           <div class="project-card-title">
             <p>Rocket League Esports Website</p>
@@ -66,21 +66,6 @@
               <div class="icon-container">
                 <img src="icons/nextjs.png" loading="lazy" width="35px" height="35px" />
               </div>
-              <div class="icon-container">
-                <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="firefoxcss.html" class="arcadia-href">
-        <div class="project-card">
-          <div class="project-card-logo-and-title">
-            <h2>Custom Firefox Theme</h2>
-          </div>
-          <div class="project-card-title">
-            <p>CSS Firefox theme and user.js</p>
-            <div class="project-card-icons">
               <div class="icon-container">
                 <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
               </div>
@@ -103,16 +88,16 @@
           </div>
         </div>
       </a>
-      <a href="arcadiaredesign.html" class="arcadia-href">
+      <a href="firefoxcss.html" class="arcadia-href">
         <div class="project-card">
           <div class="project-card-logo-and-title">
-            <h2>ARCADIA Redesign</h2>
+            <h2>Custom Firefox Theme</h2>
           </div>
           <div class="project-card-title">
-            <p>Conceptual redesign of ARCADIA website</p>
+            <p>CSS Firefox theme and user.js</p>
             <div class="project-card-icons">
               <div class="icon-container">
-                <img src="icons/figma.png" loading="lazy" width="35px" height="35px" />
+                <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
               </div>
             </div>
           </div>
@@ -124,7 +109,7 @@
       <p>Evan Marchesani | UX Designer</p>
     </footer>
   </div>
-  <script src="script-v0.3.js"></script>
+  <script src="script-v0.4.js"></script>
   <script>
     const introText = document.getElementById('introText');
     const buttons = document.querySelectorAll('.audience-nav button');
