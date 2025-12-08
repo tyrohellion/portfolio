@@ -14,7 +14,7 @@
       document.documentElement.setAttribute("data-theme", t || s);
     })();
   </script>
-  <link rel="stylesheet" href="style-v1.0.css" />
+  <link rel="stylesheet" href="style-v1.1.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,10 +27,36 @@
   <div class="grid">
     <div class="navbar-background-wrapper">
       <div class="navbar">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="https://github.com/tyrohellion" class="nav-item" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item" target="_blank">Linkedin</a>
-        <button class="nav-item" onclick="toggleTheme()">Theme</button>
+        <a href="index.html" class="nav-item-with-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-house-icon lucide-house">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          </svg>
+        </a>
+      </div>
+      <div class="navbar">
+        <a href="https://github.com/tyrohellion" class="nav-item-with-icon" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-github-icon lucide-github">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item-with-icon" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-linkedin-icon lucide-linkedin">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect width="4" height="12" x="2" y="9" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a class="nav-item" onclick="toggleTheme()" id="themeIcon"></a>
       </div>
     </div>
     <div class="project-align-middle">
@@ -43,6 +69,7 @@
             Risk of Rain 2 Concept Website
           </div>
         </div>
+        <img class="static-mockup-images" src="images/riskofrain/overviewmockup.png">
         <div class="technologies-used-box">
           <div class="role-headings-container">
             <div class="role-title-text">Role</div>
@@ -73,13 +100,14 @@
             </div>
           </div>
         </div>
-        <img class="static-mockup-images" src="images/riskofrain/overviewmockup.png">
         <div class="project-body-wrapper-firefox">
           <div class="project-title-desc">Overview</div>
           <div class="project-paragraph-wrapper">
             <div class="project-body">
-              I was tasked with creating a prototype website based on Risk of Rain 2, focusing on building a clear
-              and engaging experience for users through strong design principles. The goal was to design an interface
+              I was tasked with creating a prototype website based on <span>Risk of Rain 2</span>, focusing on building
+              a clear
+              and engaging experience for users through strong <span>design principles</span>. The goal was to design an
+              interface
               that
               feels natural to explore, visually consistent, and easy to understand. Every layout and interaction was
               planned to guide users smoothly through the content, helping them stay focused and interested while
@@ -94,15 +122,19 @@
               <div class="project-goal-title">Frictionless</div>
               <div class="project-goal-body-card-text">A key goal of this project was to design an experience that feels
                 natural and
-                effortless to navigate. I aimed to remove unnecessary friction so users could move smoothly through the
-                interface with confidence and ease.</div>
+                <span>effortless</span> to navigate. I aimed to remove unnecessary friction so users could move smoothly
+                through the
+                interface with confidence and ease.
+              </div>
             </div>
             <div class="project-goal-tile">
               <div class="project-goal-title">Unforgettable</div>
               <div class="project-goal-body-card-text">Another goal was to create a memorable and engaging experience. I
                 focused on
-                presenting information clearly and visually, making it easy for users to stay interested and retain what
-                they learned.</div>
+                presenting information clearly and visually, making it easy for users to stay interested and
+                <span>retain what
+                  they learned</span>.
+              </div>
             </div>
             <div class="project-goal-tile">
               <div class="project-goal-title">Consistent</div>
@@ -110,7 +142,8 @@
                 I
                 wanted
                 every
-                element to feel unified and reliable, ensuring a cohesive experience across the entire prototype.</div>
+                element to feel <span>unified</span> and reliable, ensuring a cohesive experience across the entire
+                prototype.</div>
             </div>
           </div>
         </div>
@@ -119,11 +152,13 @@
           <div class="project-subheading-body-wrapper">
             <div class="project-title-h2">Project Proposal</div>
             <div class="project-goal-body">I started by creating a project proposal that outlined how I would apply key
-              UI
-              design
-              principles in my final project. The proposal details how each principle would guide my design choices.
+              <span>UI
+                design
+                principles</span> in my final project. The proposal details how each principle would guide my design
+              choices.
               Check
-              the link below to view my full write up.</div>
+              the link below to view my full write up.
+            </div>
           </div>
           <a href="files/Evan Marchesani - Final Proposal.pdf" class="proposal-preview" target="_blank">
             <img class="proposal-preview-img" src="images/riskofrain/proposalpreview.png">
@@ -140,28 +175,31 @@
           <div class="project-subheading-body-wrapper">
             <div class="project-title-h2">User Interface Principles</div>
             <div class="project-title-h3">The Multimedia Principle</div>
-            <div class="project-goal-body">The Multimedia Principle tells us that users learn better through pictures
-              and
-              words
-              rather than words alone. I will make use of this principle by showcasing pictures of the
+            <div class="project-goal-body">The Multimedia Principle tells us that <span>users learn better through
+                pictures
+                and
+                words
+                rather than words alone</span>. I will make use of this principle by showcasing pictures of the
               game along with text that explains the image further on all pages.</div>
             <img class="static-mockup-images" src="images/riskofrain/multimediamockup.png">
           </div>
         </div>
         <div class="project-subheading-body-wrapper">
           <div class="project-title-h3">The Von Restorff Effect</div>
-          <div class="project-goal-body">The Von Restorff Effect is a psychological principle that states when three or
-            more similar
-            objects are present, the one that is different from the rest is likely to be the one that's
-            remembered. I will consider this by bolding, and highlighting key text in bodies of
+          <div class="project-goal-body">The Von Restorff Effect is a psychological principle that states <span>when
+              three or
+              more similar
+              objects are present, the one that is different from the rest is likely to be the one that's
+              remembered</span>. I will consider this by bolding, and highlighting key text in bodies of
             information with appropriate colors that stand out.</div>
           <img class="static-mockup-images" src="images/riskofrain/vonrestmockup.png">
         </div>
         <div class="project-subheading-body-wrapper">
           <div class="project-title-h3">The Zeigarnik Effect</div>
-          <div class="project-goal-body">The Zeigarnik Effect is a principle that states that people tend to remember
-            incomplete
-            tasks better than completed tasks. I will consider this principle by making the userʼs last
+          <div class="project-goal-body">The Zeigarnik Effect is a principle that states that <span>people tend to
+              remember
+              incomplete
+              tasks better than completed tasks</span>. I will consider this principle by making the userʼs last
             step to go to the store fronts to purchase the game. This is so the user will remember they
             have not purchased the game yet.</div>
           <img class="static-mockup-images" src="images/riskofrain/zeigarnikmockup.png">
@@ -170,7 +208,8 @@
           <div class="project-title-desc">Final Prototype</div>
           <div class="project-goal-body-final">The final prototype successfully demonstrates an interface that is both
             intuitive
-            and engaging. By applying thoughtful UI and UX principles, the design provides a seamless experience where
+            and engaging. By applying <span>thoughtful UI and UX principles</span>, the design provides a seamless
+            experience where
             users can easily navigate, explore content, and understand key aspects of Risk of Rain 2. The layout
             captures
             the game’s atmosphere while presenting information clearly, achieving the goal of creating an immersive and
@@ -196,7 +235,8 @@
         <div class="section-container">
           <div class="project-title-desc">Takeaways</div>
           <div class="project-goal-body-final">I learned extremely valuable insights during this project. It’s very
-            important to stick to widely accepted design conventions for the most part when creating interfaces. I
+            important to <span>stick to widely accepted design conventions</span> for the most part when creating
+            interfaces. I
             learned
             that there is so much more that goes into User Interface Design than I originally thought. I will be able to
             apply these design principles to all future projects going forward.</div>
@@ -208,7 +248,7 @@
     </footer>
   </div>
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="script-v0.4.js"></script>
+  <script src="script-v0.5.js"></script>
   <script>
     feather.replace();
   </script>

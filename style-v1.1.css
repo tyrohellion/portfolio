@@ -41,6 +41,7 @@
 
   /* ===== svg invert ===== */
   --keep-svg-color: invert(0);
+  --invert-svg-fill: white;
 
   /* ===== Font ===== */
   font-family: Inter, sans-serif;
@@ -87,6 +88,7 @@
   --shadow-heavy: 0 12px 30px rgba(0, 0, 0, 0.15);
 
   --invert-svg-color: invert(0);
+  --invert-svg-fill: black;
 }
 
 @supports (font-variation-settings: normal) {
@@ -105,6 +107,10 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+span {
+  font-weight: bold;
 }
 
 body {
@@ -215,9 +221,13 @@ h2 {
 .navbar-background-wrapper {
   position: fixed;
   left: calc(100vw - 50vw);
-  top: 4.5rem;
+  top: 4rem;
   transform: translate(-50%, -50%);
   z-index: 11;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem 0 2rem;
 }
 
 .navbar {
@@ -225,9 +235,9 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  width: min-content;
+  width: max-content;
   border-radius: 5rem;
-  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   background-color: var(--color-navbar-bg);
   backdrop-filter: blur(2px);
   border: 1px solid var(--color-border-light);
@@ -238,7 +248,7 @@ h2 {
   font-family: Inter, sans-serif;
   font-size: 0.8rem;
   width: fit-content;
-  height: fit-content;
+  height: 36px;
   font-weight: 500;
   border-radius: 5rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -250,7 +260,33 @@ h2 {
   margin: 0;
 }
 
-.nav-item:hover {
+.nav-item-with-icon {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-primary);
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 150ms;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+}
+
+.navbar svg {
+  width: 20px;
+  height: auto;
+  fill: var(--invert-svg-fill);
+  filter: var(--invert-svg-color);
+}
+
+.nav-item:hover, .nav-item-with-icon:hover {
   background-color: var(--color-surface-bg);
   transition: all 150ms;
   cursor: pointer;
@@ -430,7 +466,7 @@ h2 {
   align-items: center;
   flex-direction: column;
   gap: 5rem;
-  padding-top: 12rem;
+  padding-top: 8rem;
   padding-bottom: 12rem;
   max-width: 60rem;
 }
@@ -707,7 +743,7 @@ h2 {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 30%;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-heavy);
