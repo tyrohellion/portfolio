@@ -36,6 +36,14 @@ if (!localStorage.getItem("theme")) {
   setTheme(localStorage.getItem("theme"));
 }
 
+tippy('#tippyButton', {
+  placement: 'bottom',
+})
+
+tippy('#themeIcon', {
+  placement: 'bottom',
+})
+
 function animate() {
   currentX += (targetX - currentX) * 0.05;
   currentY += (targetY - currentY) * 0.05;

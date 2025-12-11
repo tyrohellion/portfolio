@@ -27,7 +27,7 @@
   <div class="grid">
     <div class="navbar-background-wrapper">
       <div class="navbar">
-        <a href="index.html" class="nav-item-with-icon">
+        <a href="index.html" class="nav-item-with-icon" data-tippy-content="Home" id="tippyButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-house-icon lucide-house">
@@ -38,7 +38,8 @@
         </a>
       </div>
       <div class="navbar">
-        <a href="https://github.com/tyrohellion" class="nav-item-with-icon" target="_blank">
+        <a href="https://github.com/tyrohellion" class="nav-item-with-icon" target="_blank" data-tippy-content="GitHub"
+          id="tippyButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-github-icon lucide-github">
@@ -47,7 +48,8 @@
             <path d="M9 18c-4.51 2-5-2-7-2" />
           </svg>
         </a>
-        <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item-with-icon" target="_blank">
+        <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item-with-icon" target="_blank"
+          data-tippy-content="LinkedIn" id="tippyButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-linkedin-icon lucide-linkedin">
@@ -56,7 +58,7 @@
             <circle cx="4" cy="4" r="2" />
           </svg>
         </a>
-        <a class="nav-item" onclick="toggleTheme()" id="themeIcon"></a>
+        <a class="nav-item" onclick="toggleTheme()" id="themeIcon" data-tippy-content="Change Theme"></a>
       </div>
     </div>
     <div class="project-align-middle">
@@ -247,8 +249,10 @@
       <p>Evan Marchesani | UX Designer</p>
     </footer>
   </div>
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="script-v0.5.js"></script>
+  <script src="script-v0.6.js"></script>
   <script>
     feather.replace();
   </script>
