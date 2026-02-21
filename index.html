@@ -14,7 +14,7 @@
       document.documentElement.setAttribute("data-theme", t || s);
     })();
   </script>
-  <link rel="stylesheet" href="style-v1.1.css" />
+  <link rel="stylesheet" href="style-v1.2.css" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,77 +60,114 @@
         <a class="nav-item" onclick="toggleTheme()" id="themeIcon" data-tippy-content="Change Theme"></a>
       </div>
     </div>
-    <div class="pfp-wrapper">
-      <div class="audience-wrapper">
-        <nav class="audience-nav">
-          <button data-audience="anyone">For anyone</button>
-          <button data-audience="recruiters">Recruiters</button>
-          <button data-audience="design-directors">Design Directors</button>
-          <button data-audience="engineer">Engineers</button>
-        </nav>
-        <h2 id="introText">I create meaningful interfaces that puts users first.</h2>
+    <div class="main-background-wrapper">
+      <div class="pfp-wrapper">
+        <div class="audience-wrapper">
+          <nav class="audience-nav">
+            <button data-audience="anyone">For anyone</button>
+            <button data-audience="recruiters">Recruiters</button>
+            <button data-audience="design-directors">Design Directors</button>
+            <button data-audience="engineer">Engineers</button>
+          </nav>
+          <h2 id="introText">I create meaningful interfaces that puts users first.</h2>
+        </div>
+        <div class="pfp">
+          <img src="images/no background.svg" class="img-svg" />
+          <img src="images/pfp.png" class="img-png" />
+        </div>
       </div>
-      <div class="pfp">
-        <img src="images/no background.svg" class="img-svg" />
-        <img src="images/pfp.png" class="img-png" />
-      </div>
-    </div>
 
-    <div class="project-wrapper-homepage">
-      <h2>My Projects</h2>
-    </div>
-    <div class="projects-list-page-main">
-      <a href="arcadia.html" class="arcadia-href">
-        <div class="project-card">
-          <div class="project-card-logo-and-title">
-            <h2>Arcadia</h2>
+      <div class="projects-centered">
+        <div class="projects-section-wrapper">
+          <div class="project-wrapper-homepage">
+            <h2>My Projects</h2>
           </div>
-          <div class="project-card-title">
-            <p>Rocket League Esports Website</p>
-            <div class="project-card-icons">
-              <div class="icon-container" data-tippy-content="Reactjs" id="tippyButton">
-                <img src="icons/react.png" loading="lazy" width="30px" height="30px" />
+          <div class="projects-list-page-main">
+            <a href="arcadia.html" class="arcadia-href">
+              <div class="project-card">
+                <div class="project-card-logo-and-title">
+                  <h2>Arcadia</h2>
+                </div>
+                <div class="project-card-title">
+                  <p>Rocket League Esports Website</p>
+                  <div class="project-card-icons">
+                    <div class="icon-container" data-tippy-content="Reactjs" id="tippyButton">
+                      <img src="icons/react.png" loading="lazy" width="30px" height="30px" />
+                    </div>
+                    <div class="icon-container" data-tippy-content="Nextjs" id="tippyButton">
+                      <img src="icons/nextjs.png" loading="lazy" width="35px" height="35px" />
+                    </div>
+                    <div class="icon-container" data-tippy-content="CSS" id="tippyButton">
+                      <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="icon-container" data-tippy-content="Nextjs" id="tippyButton">
-                <img src="icons/nextjs.png" loading="lazy" width="35px" height="35px" />
+            </a>
+            <a href="riskofrain2.html" class="arcadia-href">
+              <div class="project-card">
+                <div class="project-card-logo-and-title">
+                  <h2>Risk of Rain 2 Website</h2>
+                </div>
+                <div class="project-card-title">
+                  <p>Video game design concept website</p>
+                  <div class="project-card-icons">
+                    <div class="icon-container" data-tippy-content="Figma" id="tippyButton">
+                      <img src="icons/figma.png" loading="lazy" width="35px" height="35px" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="icon-container" data-tippy-content="CSS" id="tippyButton">
-                <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
+            </a>
+            <a href="firefoxcss.html" class="arcadia-href">
+              <div class="project-card">
+                <div class="project-card-logo-and-title">
+                  <h2>Custom Firefox Theme</h2>
+                </div>
+                <div class="project-card-title">
+                  <p>CSS Firefox theme and user.js</p>
+                  <div class="project-card-icons">
+                    <div class="icon-container" data-tippy-content="CSS" id="tippyButton">
+                      <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
-      </a>
-      <a href="riskofrain2.html" class="arcadia-href">
-        <div class="project-card">
-          <div class="project-card-logo-and-title">
-            <h2>Risk of Rain 2 Website</h2>
+      </div>
+      <div class="projects-plus-tags-wrapper">
+        <div class="tag-section">
+          <div class="tag-header">
+            <h2>Skills</h2>
           </div>
-          <div class="project-card-title">
-            <p>Video game design concept website</p>
-            <div class="project-card-icons">
-              <div class="icon-container" data-tippy-content="Figma" id="tippyButton">
-                <img src="icons/figma.png" loading="lazy" width="35px" height="35px" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="firefoxcss.html" class="arcadia-href">
-        <div class="project-card">
-          <div class="project-card-logo-and-title">
-            <h2>Custom Firefox Theme</h2>
-          </div>
-          <div class="project-card-title">
-            <p>CSS Firefox theme and user.js</p>
-            <div class="project-card-icons">
-              <div class="icon-container" data-tippy-content="CSS" id="tippyButton">
-                <img src="icons/css.png" loading="lazy" width="35px" height="35px" />
-              </div>
-            </div>
+          <div class="skill-tags-wrapper">
+            <div class="skill-tag">Figma</div>
+            <div class="skill-tag">Figma auto layout</div>
+            <div class="skill-tag">Figma variable design systems</div>
+            <div class="skill-tag">Teamwork</div>
+            <div class="skill-tag">Leadership</div>
+            <div class="skill-tag">Social skills</div>
+            <div class="skill-tag">Linux systems</div>
+            <div class="skill-tag">Problem solving</div>
+            <div class="skill-tag">Computer literacy</div>
+            <div class="skill-tag">HTML</div>
+            <div class="skill-tag">CSS</div>
+            <div class="skill-tag">Javascript</div>
+            <div class="skill-tag">ReactJS</div>
+            <div class="skill-tag">NextJS</div>
           </div>
         </div>
-      </a>
+
+        <div class="tag-section" id="github-chart">
+          <div class="tag-header">
+            <h2>GitHub Activity</h2>
+          </div>
+          <div id="gh" data-login="tyrohellion" data-show-thumbnail="false"></div>
+          <script src="https://githubgraph.jigyansurout.com/assets/js/gh.js"></script>
+        </div>
+      </div>
     </div>
 
     <footer class="site-footer">
@@ -139,7 +176,7 @@
   </div>
   <script src="https://unpkg.com/popper.js@1"></script>
   <script src="https://unpkg.com/tippy.js@4"></script>
-  <script src="script-v0.6.js"></script>
+  <script src="script-v0.7.js"></script>
   <script>
     const introText = document.getElementById('introText');
     const buttons = document.querySelectorAll('.audience-nav button');

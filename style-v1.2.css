@@ -47,6 +47,27 @@
   font-family: Inter, sans-serif;
   font-feature-settings: "liga" 1, "calt" 1;
   font-family: "Space Grotesk", sans-serif;
+
+  /* github chart */
+  --gh-bg-color: #0f1016;
+  --gh-base-size-4: 0.25rem;
+  --gh-base-size-8: 0.5rem;
+  --gh-base-size-12: 0.75rem;
+  --gh-base-size-16: 1rem;
+  --gh-base-size-32: 2rem;
+  --gh-cell-level0-color: #1e202e;
+  --gh-cell-level1-color: #0e4429;
+  --gh-cell-level2-color: #006d32;
+  --gh-cell-level3-color: #26a641;
+  --gh-cell-level4-color: #39d353;
+  --gh-cell-info-bg-color: #6e7681;
+  --gh-cell-outline-color: #ffffff0d;
+  --gh-cell-border-color: rgba(255, 255, 255, 0.03);
+  --gh-border-card-color: #2d2a45;
+  --gh-border-card-width: max(1px, 0.0625rem);
+  --gh-text-default-color: #f1f5f9;
+  --gh-text-inactive-color: #848D97;
+  --gh-link-hover-color: #2f81f7;
 }
 
 /* =====================
@@ -119,6 +140,14 @@ body {
   position: relative;
   color: var(--color-text-primary);
   background: none;
+}
+
+.main-background-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6rem 6rem 6rem;
+  gap: 4rem;
 }
 
 .name-audience-wrapper {
@@ -209,9 +238,9 @@ h2 {
 }
 
 .site-footer {
-  position: absolute;
-  bottom: 20px;
-  left: 50px;
+  position: fixed;
+  bottom: 1rem;
+  left: 3rem;
   font-size: 0.8rem;
   opacity: 0.6;
 }
@@ -220,11 +249,9 @@ h2 {
 
 .navbar-background-wrapper {
   position: fixed;
-  left: calc(100vw - 50vw);
-  top: 4rem;
-  transform: translate(-50%, -50%);
+  top: 3rem;
   z-index: 11;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   padding: 0 2rem 0 2rem;
@@ -235,12 +262,24 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  width: max-content;
   border-radius: 5rem;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   background-color: var(--color-navbar-bg);
   backdrop-filter: blur(2px);
   border: 1px solid var(--color-border-light);
+}
+
+#navHome {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: min-content;
+}
+
+.breadcrumb {
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .nav-item {
@@ -286,7 +325,8 @@ h2 {
   filter: var(--invert-svg-color);
 }
 
-.nav-item:hover, .nav-item-with-icon:hover {
+.nav-item:hover,
+.nav-item-with-icon:hover {
   background-color: var(--color-surface-bg);
   transition: all 150ms;
   cursor: pointer;
@@ -298,8 +338,7 @@ h2 {
   padding-top: 12rem;
   flex-wrap: wrap;
   gap: 4rem;
-  height: calc(100vh - 60vh);
-  padding: 15rem 10rem 10rem 10rem;
+  padding: 15rem 10rem 2rem 10rem;
 }
 
 .pfp {
@@ -377,11 +416,30 @@ h2 {
 
 /* projects list page */
 
-.projects-list-page-main {
+.projects-centered {
   display: flex;
   justify-content: center;
+}
+
+.projects-plus-tags-wrapper {
+  display: flex;
+  align-items: start;
   flex-wrap: wrap;
-  padding: 2rem 1rem 8rem 1rem;
+  gap: 2rem;
+}
+
+.projects-section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem 6rem 1rem;
+  align-items: flex-start;
+}
+
+.projects-list-page-main {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -452,7 +510,6 @@ h2 {
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
-  padding-top: 10rem;
 }
 
 .project-align-middle {
@@ -581,7 +638,6 @@ h2 {
   height: auto;
   object-fit: contain;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
 }
 
 .project-goals-wrapper {
@@ -905,40 +961,300 @@ h2 {
   color: var(--color-text-primary);
 }
 
-@media all and (min-width: 480px) and (max-width: 768px) {
+/* tags section */
+
+.tag-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tag-header {
+  display: flex;
+  justify-content: center;
+}
+
+.skill-tags-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  max-width: 480px;
+}
+
+.skill-tag {
+  white-space: nowrap;
+  width: min-content;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: var(--color-navbar-bg);
+  backdrop-filter: blur(2px);
+  border: 1px solid var(--color-border-light);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1rem;
+  cursor: default;
+}
+
+/* Main block */
+#gh {
+  color: var(--gh-text-default-color);
+  width: fit-content;
+  font-family: var(--gh-font-default-family);
+}
+
+#gh a {
+  text-decoration: none;
+  color: var(--gh-text-inactive-color)
+}
+
+#gh a:hover {
+  color: var(--gh-link-hover-color);
+}
+
+/* Table */
+.ghCalendarTable {
+  color: var(--gh-text-default-color);
+  border-spacing: 3px;
+  border-collapse: separate;
+}
+
+.ghCalendarTable tr {
+  height: 10px;
+}
+
+.ghCalendarTable td {
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* DayCell */
+.ghCalendarDayCell {
+  width: 10px;
+  border-radius: 2px;
+  border: 1px solid var(--gh-cell-border-color);
+  outline: 1px solid var(--gh-cell-outline-color);
+  outline-offset: -2px;
+}
+
+.ghCalendarDayCell[data-level="NONE"] {
+  background-color: var(--color-bg-secondary);
+  border: none;
+  outline: none;
+}
+
+.ghCalendarDayCell[data-level="FIRST_QUARTILE"] {
+  background-color: var(--gh-cell-level1-color);
+}
+
+.ghCalendarDayCell[data-level="SECOND_QUARTILE"] {
+  background-color: var(--gh-cell-level2-color);
+}
+
+.ghCalendarDayCell[data-level="THIRD_QUARTILE"] {
+  background-color: var(--gh-cell-level3-color);
+}
+
+.ghCalendarDayCell[data-level="FOURTH_QUARTILE"] {
+  background-color: var(--gh-cell-level4-color);
+}
+
+.ghCalendarDayCell span {
+  visibility: hidden;
+  position: absolute;
+  transform: translate(-50%, -130%);
+  word-wrap: normal;
+  text-wrap: nowrap;
+  pointer-events: none;
+  background-color: var(--gh-cell-info-bg-color);
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-family: Inter, sans-serif;
+}
+
+.ghCalendarDayCell span::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-border-light) transparent transparent transparent;
+}
+
+.ghCalendarDayCell:hover span {
+  visibility: visible;
+}
+
+.ghCalendarLabel {
+  font-size: 12px;
+  color: var(--color-text-light);
+  position: absolute;
+  bottom: -3px;
+  font-weight: 400;
+  font-family: Inter, sans-serif;
+}
+
+/* Containers */
+.ghCalendarCard {
+  background-color: var(--color-card-bg);
+  backdrop-filter: blur(3px);
+  padding: var(--gh-base-size-16);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border-light);
+}
+
+.ghCalendarCanvas {
+  display: flex !important;
+  flex-direction: column;
+  padding-top: var(--gh-base-size-8, 4px) !important;
+  text-align: center !important;
+  margin-right: var(--gh-base-size-8, 8px) !important;
+  margin-left: var(--gh-base-size-8, 8px) !important;
+  overflow: visible;
+}
+
+/* Header */
+.ghCalendarHeader {
+  margin-bottom: var(--gh-base-size-4);
+  height: 20px;
+}
+
+.ghCalendarHeader span {
+  color: var(--color-text-primary);
+  backdrop-filter: blur(2px);
+  font-weight: 500;
+  float: left;
+}
+
+.ghCalendarHeader div {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+
+.ghCalendarHeader div img {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-left: var(--gh-base-size-4);
+}
+
+/* Footer */
+.ghCalendarCardFooter {
+  display: block;
+  padding: var(--gh-base-size-4, 4px) var(--gh-base-size-32, 32px) !important;
+  text-align: center !important;
+  font-size: var(--gh-base-size-12);
+  font-family: Inter, sans-serif;
+  color: var(--color-text-dimmed);
+}
+
+.ghCalendarCardFooterLink {
+  display: block;
+  float: left;
+}
+
+.ghCalendarCardFooterColors {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  align-items: center;
+}
+
+.ghCalendarCardFooterColors * {
+  margin-right: var(--gh-base-size-4);
+}
+
+.ghCalendarCardFooterColors div {
+  width: 10px;
+  height: 10px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1000px) {
   #introText {
     font-size: 1.5rem;
   }
 
   .pfp-wrapper {
-    padding: 15rem 2rem 10rem 2rem;
+    padding: 15rem 2rem 8rem 2rem;
     height: auto;
     flex-direction: column;
   }
 
   .audience-nav button {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .audience-wrapper {
     width: auto;
     padding-right: 2rem;
   }
+
+  .main-background-wrapper {
+    padding: 0 2rem 4rem 2rem;
+  }
 }
 
-@media all and (max-width: 480px) {
+@media all and (min-width: 480px) and (max-width: 768px) {
   #introText {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .pfp-wrapper {
-    padding: 12rem 2rem 0 2rem;
+    padding: 15rem 2rem 6rem 2rem;
     height: auto;
     flex-direction: column;
   }
 
   .audience-nav button {
-    font-size: 0.7rem;
+    font-size: 1rem;
+  }
+
+  .audience-wrapper {
+    width: auto;
+    padding-right: 2rem;
+  }
+
+  .main-background-wrapper {
+    padding: 0 2rem 3rem 2rem;
+  }
+
+  #github-chart {
+    display: none;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+}
+
+@media all and (max-width: 480px) {
+  #introText {
+    font-size: 1.5rem;
+  }
+
+  .navbar-background-wrapper {
+    top: 1rem;
+  }
+
+  .site-footer {
+    display: none;
+  }
+
+  .pfp-wrapper {
+    padding: 12rem 1rem 0 1rem;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .audience-nav button {
+    font-size: 1rem;
   }
 
   .audience-wrapper {
@@ -948,5 +1264,21 @@ h2 {
 
   .audience-nav {
     gap: 0.5rem;
+  }
+
+  .projects-plus-tags-wrapper {
+    justify-content: flex-start;
+  }
+
+  .main-background-wrapper {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  #github-chart {
+    display: none;
+  }
+
+  .breadcrumb {
+    display: none;
   }
 }
