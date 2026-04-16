@@ -29,11 +29,15 @@
   --color-preview-hover-bg: rgba(0, 0, 0, 0.2);
 
   /* ===== Gradients ===== */
-  --gradient-bg: radial-gradient(circle,
-      var(--color-bg-primary) 0%,
-      var(--color-bg-secondary) 100%);
-  --gradient-grid: radial-gradient(rgba(63, 67, 77, 0.99) 1.4px,
-      transparent 1px);
+  --gradient-bg: radial-gradient(
+    circle,
+    var(--color-bg-primary) 0%,
+    var(--color-bg-secondary) 100%
+  );
+  --gradient-grid: radial-gradient(
+    rgba(63, 67, 77, 0.99) 1.4px,
+    transparent 1px
+  );
 
   /* ===== Shadows ===== */
   --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -45,7 +49,9 @@
 
   /* ===== Font ===== */
   font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -78,11 +84,15 @@
   --color-preview-bg: rgba(255, 255, 255, 0.9);
   --color-preview-hover-bg: rgba(0, 0, 0, 0.05);
 
-  --gradient-bg: radial-gradient(circle,
-      var(--color-bg-primary) 0%,
-      var(--color-bg-secondary) 100%);
-  --gradient-grid: radial-gradient(rgba(154, 166, 194, 0.99) 1.4px,
-      transparent 1px);
+  --gradient-bg: radial-gradient(
+    circle,
+    var(--color-bg-primary) 0%,
+    var(--color-bg-secondary) 100%
+  );
+  --gradient-grid: radial-gradient(
+    rgba(154, 166, 194, 0.99) 1.4px,
+    transparent 1px
+  );
 
   --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow-heavy: 0 12px 30px rgba(0, 0, 0, 0.15);
@@ -282,7 +292,8 @@ h2 {
   filter: var(--invert-svg-color);
 }
 
-.nav-item:hover, .nav-item-with-icon:hover {
+.nav-item:hover,
+.nav-item-with-icon:hover {
   background-color: var(--color-surface-bg);
   transition: all 150ms;
   cursor: pointer;
@@ -605,7 +616,7 @@ span {
   height: auto;
   object-fit: contain;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  padding: 0rem 1rem 2rem 1rem;
 }
 
 .project-goals-wrapper {
@@ -790,7 +801,9 @@ span {
   height: 100%;
   background: transparent;
   border-radius: 0.5rem;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
   z-index: 1;
 }
 
@@ -816,7 +829,9 @@ span {
   color: var(--color-text-primary);
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .proposal-preview:hover .preview-button {
@@ -849,7 +864,9 @@ span {
   height: auto;
   object-fit: cover;
   box-shadow: var(--shadow-heavy);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .glightbox:nth-child(1) {
@@ -929,15 +946,26 @@ span {
   color: var(--color-text-primary);
 }
 
+@media all and (min-width: 768px) and (max-width: 1160px) {
+  .pfp {
+    display: none;
+  }
+
+  .pfp-wrapper {
+    padding-bottom: 0rem;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media all and (min-width: 480px) and (max-width: 768px) {
   #introText {
     font-size: 1.5rem;
   }
 
   .pfp-wrapper {
-    padding: 15rem 2rem 10rem 2rem;
-    height: auto;
-    flex-direction: column;
+    display: none;
   }
 
   .audience-nav button {
@@ -948,6 +976,11 @@ span {
     width: auto;
     padding-right: 2rem;
   }
+
+  .projects-list-page-main {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media all and (max-width: 480px) {
@@ -956,9 +989,7 @@ span {
   }
 
   .pfp-wrapper {
-    padding: 12rem 2rem 0 2rem;
-    height: auto;
-    flex-direction: column;
+    display: none;
   }
 
   .audience-nav button {
@@ -972,5 +1003,9 @@ span {
 
   .audience-nav {
     gap: 0.5rem;
+  }
+
+  .breadcrumb {
+    display: none;
   }
 }
