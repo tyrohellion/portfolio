@@ -1,328 +1,493 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>EM | Arcadia</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-        (function () {
-            const t = localStorage.getItem("theme");
-            const s = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", t || s);
-        })();
+      (function () {
+        const t = localStorage.getItem("theme");
+        const s = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        document.documentElement.setAttribute("data-theme", t || s);
+      })();
     </script>
-    <link rel="stylesheet" href="style-v1.1.css" />
+    <link rel="stylesheet" href="style-v1.2.css" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="grid">
-        <div class="navbar-background-wrapper">
-            <div class="navbar">
-                <a href="index.html" class="nav-item-with-icon" data-tippy-content="Home" id="tippyButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-house-icon lucide-house">
-                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                        <path
-                            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    </svg>
-                </a>
-            </div>
-            <div class="navbar">
-                <a href="https://github.com/tyrohellion" class="nav-item-with-icon" target="_blank"
-                    data-tippy-content="GitHub" id="tippyButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-github-icon lucide-github">
-                        <path
-                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                        <path d="M9 18c-4.51 2-5-2-7-2" />
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/evanmarchesani/" class="nav-item-with-icon" target="_blank"
-                    data-tippy-content="LinkedIn" id="tippyButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-linkedin-icon lucide-linkedin">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                        <rect width="4" height="12" x="2" y="9" />
-                        <circle cx="4" cy="4" r="2" />
-                    </svg>
-                </a>
-                <a class="nav-item" onclick="toggleTheme()" id="themeIcon" data-tippy-content="Change Theme"></a>
-            </div>
+      <div class="navbar-background-wrapper">
+        <div id="navHome">
+          <div class="navbar">
+            <a
+              href="index.html"
+              class="nav-item-with-icon"
+              data-tippy-content="Home"
+              id="tippyButton"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-house-icon lucide-house"
+              >
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                <path
+                  d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="breadcrumb">/ <span class="breadcrumb-underline">Arcadia</span></div>
         </div>
-        <div class="project-align-middle">
-            <div class="project-wrapper">
-                <div class="project-title-wrapper">
-                    <div class="project-title-name">
-                        arcadia
-                    </div>
-                    <div class="project-title-desc">
-                        Full Stack Rocket League Esports Website
-                    </div>
-                </div>
-                <img class="static-mockup-images" src="images/arcadia/playerpage.png">
-                <div class="technologies-used-box">
-                    <div class="role-headings-container">
-                        <div class="role-title-text">Roles</div>
-                        <div class="role-item-wrapper">
-                            <div class="technology-item-name">User Interface Designer</div>
-                            <div class="technology-item-name">Full Stack Next.js Developer</div>
-                        </div>
-                    </div>
-                    <div class="role-headings-container">
-                        <div class="role-title-text">Tools</div>
-                        <div class="technology-item-wrapper">
-                            <img class="technology-item-icon" src="icons/nextjs.svg"></img>
-                            <div class="technology-item-name">Next.js</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <img class="technology-item-icon" src="icons/css.png"></img>
-                            <div class="technology-item-name">CSS</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <img class="technology-item-icon" src="icons/github.svg"></img>
-                            <div class="technology-item-name">GitHub</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <img class="technology-item-icon" src="icons/shiftrle.png"></img>
-                            <div class="technology-item-name">ShiftRLE API</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <img class="technology-item-icon" src="icons/figma.png"></img>
-                            <div class="technology-item-name">Figma</div>
-                        </div>
-                    </div>
-                    <div class="role-headings-container">
-                        <div class="role-title-text">Deliverables</div>
-                        <div class="technology-item-wrapper">
-                            <div class="technology-item-name">Full Stack Website</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <div class="technology-item-name">Live Pages</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <div class="technology-item-name">Completely Responsive Design</div>
-                        </div>
-                        <div class="technology-item-wrapper">
-                            <div class="technology-item-name">Future Concept Redesign</div>
-                        </div>
-                    </div>
-                    <div class="role-headings-container">
-                        <div class="role-title-text">Duration</div>
-                        <div class="technology-item-wrapper">
-                            <div class="technology-item-name">4 months</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body-wrapper-firefox">
-                    <div class="project-title-desc">Overview</div>
-                    <div class="project-paragraph-wrapper">
-                        <div class="project-body">
-                            arcadia, a premier full-stack platform dedicated to the
-                            Rocket League esports scene. Created using Next.js, arcadia
-                            integrates the zsr.octane.gg API to deliver comprehensive and
-                            up-to-date information on Rocket League’s competitive landscape. It is designed to be as
-                            user friendly as possible while providing detailed information for power users or casual
-                            users alike.
-                        </div>
-                    </div>
-                </div>
-                <div class="section-container">
-                    <div class="project-title-desc">Project goals</div>
-                    <div class="project-goals-wrapper">
-                        <div class="project-goal-tile">
-                            <div class="project-goal-title">Extensive</div>
-                            <div class="project-goal-body-card-text">I wanted this project to include any kind of stat
-                                or metric that the user could ever want. It was made with power users in mind. It
-                                features a GUI feature for everything that is accessible through the public ShiftRLE
-                                API.</div>
-                        </div>
-                        <div class="project-goal-tile">
-                            <div class="project-goal-title">Responsive</div>
-                            <div class="project-goal-body-card-text">One of my main goals from the very beginning was
-                                for the website to be fully accessible from any device. This means that the entire
-                                website is perfectly engineered for mobile screens and desktop platforms seamlessly.
-                            </div>
-                        </div>
-                        <div class="project-goal-tile">
-                            <div class="project-goal-title">Intuitive</div>
-                            <div class="project-goal-body-card-text">Although I geared the website towards power users
-                                in mind. I wanted the UI to be User-centered. I planned this goal by using my experience
-                                in UX Design and Design principles to create a frictionless interface for anyone new to
-                                the website.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-container">
-                    <div class="project-title-desc">Process</div>
-                    <div class="project-subheading-body-wrapper">
-                        <div class="project-title-h2">Previous Iteration</div>
-                        <div class="project-goal-body">I started this process by creating the website using a Python
-                            Flask backend to interface with the API with the rest of the codebase being vanilla HTML,
-                            CSS, and JavaScript. After getting to what I considered to be a rough finished product, I
-                            knew that I could do better.</div>
-                    </div>
-                    <a href="https://github.com/tyrohellion/demos/" class="proposal-preview" target="_blank">
-                        <img class="proposal-preview-img" src="images/arcadia/publicarchive.png">
-                        <button class="preview-button">Visit public archive</button>
-                    </a>
-                    <div class="project-action-buttons">
-                        <a href="https://github.com/tyrohellion/demos/" class="visit-button" target="_blank">
-                            <div class="visit-text">Visit public archive</div>
-                            <i data-feather="external-link"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="section-container">
-                    <div class="project-subheading-body-wrapper">
-                        <div class="project-title-h2">First Class Features</div>
-                        <div class="project-title-h3">Universal Search</div>
-                        <div class="project-goal-body">While making this website I wanted to create a universal search
-                            that is perfectly intuitive, fast, helpful and full of information. I did this by making the
-                            search overlay full screen and dim the background so the user can get fully immersed into
-                            their action. Next I wanted to accomodate anything the user would be searching so I grouped
-                            Players, Teams and Events all into their own separate boxes. This made it easy for the user
-                            to differentiate all 3 search results.</div>
-                        <img class="static-mockup-images" src="images/arcadia/universalsearch.png">
-                    </div>
-                </div>
-                <div class="project-subheading-body-wrapper">
-                    <div class="project-title-h3">Vast Player and Team Overview Pages</div>
-                    <div class="project-goal-body">I wanted the user to be able to visit a certain player or team page
-                        and get access to the information they're looking for directly on the first page 90% of the
-                        time. For this I created boxes of structured information that can all be seen at a glance with
-                        important information highlighted with a slight accent color. The width of these boxes also
-                        makes a perfect mobile layout where the user can just scroll to see the boxes with no
-                        information obscured or removed.</div>
-                    <img class="static-mockup-images" src="images/arcadia/playerpage.png">
-                    <img class="static-mockup-images" src="images/arcadia/teampage.png">
-                </div>
-                <div class="project-subheading-body-wrapper">
-                    <div class="project-title-h3">Helpful Event Details</div>
-                    <div class="project-goal-body">Similar to the player and team pages, I wanted the user to be able to
-                        visit an event page
-                        and get access to the information they're looking for directly on the first page 90% of the
-                        time. For this I created boxes of structured information that can all be seen at a glance with
-                        important information highlighted with a slight accent color. The width of these boxes also
-                        makes a perfect mobile layout where the user can just scroll to see the boxes with no
-                        information obscured or removed.</div>
-                    <img class="static-mockup-images" src="images/arcadia/eventhomepage.png">
-                    <img class="static-mockup-images" src="images/arcadia/eventparticipants.png">
-                </div>
-                <div class="project-subheading-body-wrapper">
-                    <div class="project-title-h3">Powerful Advanced Search With Filters</div>
-                    <div class="project-goal-body">Just in case the Universal Search wasn't able to get the user the
-                        result they were looking for, I created advanced search pages for all three categories. These
-                        pages feature infinite scrolling and powerful search filters so the user will always find the
-                        result they are looking for.</div>
-                    <img class="static-mockup-images" src="images/arcadia/eventadvancedsearch.png">
-                </div>
-                <div class="project-subheading-body-wrapper">
-                    <div class="project-title-h3">Carefully Crafted Match Detail Pages</div>
-                    <div class="project-goal-body">Match pages turned out to be one of my proudest parts of the arcadia
-                        design. I originally didn't know how I was going to fit the entire design nicely on a mobile
-                        screen. One of the pain points I faced was accounting for long team names on a smaller screen
-                        without wrapping the text to a new line. The text would always Collide with the other or go off
-                        the screen. This is how I came up with the tooltip design. They are placed on opposite sides so
-                        that even on smaller screens you can still read all team names without them colliding or
-                        interfering with team logos at all. My next challenge to overcome was getting scores to fit on
-                        mobile layouts. I overcame this by making the scoreboard simply in a column direction so the
-                        entire box could just be resized from the sides inwards.</div>
-                    <img class="static-mockup-images" src="images/arcadia/matchdetails.png">
-                </div>
-                <div class="section-container">
-                    <div class="project-title-desc">Final Application</div>
-                    <div class="project-goal-body-final">This project showcases my ability to develop a full-stack web
-                        application that integrates multiple technologies to create a
-                        user-friendly and informative platform. It allowed me to overcome design challenges that
-                        required creative solutions. Whether you're a casual fan
-                        or a dedicated esports enthusiast, this website has everything you
-                        need to stay informed about the Rocket League competitive scene.</div>
-                    <div class="gallery">
-                        <a href="images/arcadia/Home.png" class="glightbox"><img src="images/arcadia/Home.png"
-                                alt=""></a>
-                        <a href="images/arcadia/universalsearch.png" class="glightbox"><img
-                                src="images/arcadia/universalsearch.png" alt=""></a>
-                        <a href="images/arcadia/matchdetails.png" class="glightbox"><img
-                                src="images/arcadia/matchdetails.png" alt=""></a>
-                        <a href="images/arcadia/playerpage.png" class="glightbox"><img
-                                src="images/arcadia/playerpage.png" alt=""></a>
-                        <a href="images/arcadia/playerresultspage.png" class="glightbox"><img
-                                src="images/arcadia/playerresultspage.png" alt=""></a>
-                        <a href="images/arcadia/teampage.png" class="glightbox"><img src="images/arcadia/teampage.png"
-                                alt=""></a>
-                        <a href="images/arcadia/eventadvancedsearch.png" class="glightbox"><img
-                                src="images/arcadia/eventadvancedsearch.png" alt=""></a>
-                        <a href="images/arcadia/eventparticipants.png" class="glightbox"><img
-                                src="images/arcadia/eventparticipants.png" alt=""></a>
-                    </div>
-                    <div class="project-action-buttons">
-                        <a href="https://github.com/tyrohellion/arcadia-nextjs" class="visit-button" target="_blank">
-                            <div class="visit-text">GitHub Repo</div>
-                            <i data-feather="external-link"></i>
-                        </a>
-                        <a href="https://arcadia-tyro.vercel.app" class="visit-button" target="_blank">
-                            <div class="visit-text">Live Site</div>
-                            <i data-feather="external-link"></i>
-                        </a>
-                    </div>
-                    <div class="note-text">Note: The ShiftRLE API is currently down for an unknown amount of
-                        time, so the live website doesn't work until the API goes live again.</div>
-                </div>
-                <div class="section-container">
-                    <div class="project-title-desc">Future Plans</div>
-                    <div class="project-goal-body-final">This is a concept prototype of a UI redesign I made that might
-                        make it to production if the ShiftRLE API ever comes back.</div>
-                    <div class="gallery">
-                        <a href="images/arcadia/arcadiaredesign1.png" class="glightbox"><img
-                                src="images/arcadia/arcadiaredesign1.png" alt=""></a>
-                        <a href="images/arcadia/arcadiaredesign2.png" class="glightbox"><img
-                                src="images/arcadia/arcadiaredesign2.png" alt=""></a>
-                        <a href="images/arcadia/arcadiaredesign3.png" class="glightbox"><img
-                                src="images/arcadia/arcadiaredesign3.png" alt=""></a>
-                    </div>
-                    <div class="project-action-buttons">
-                        <a href="https://www.figma.com/proto/44rgd8GAG4elCbFURNGUqI/VD2-Final?node-id=0-1&t=PJDFM1syETQhEAqw-1/"
-                            class="visit-button" target="_blank">
-                            <div class="visit-text">Concept Prototype</div>
-                            <i data-feather="external-link"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="section-container">
-                    <div class="project-title-desc">Takeaways</div>
-                    <div class="project-goal-body-final">This project is my biggest to date. It was my first big web
-                        developer project and a lot of design work went along. It helped me grow as a designer and get
-                        feedback on my designs from user research.</div>
-                </div>
-            </div>
+        <div class="navbar">
+          <a
+            href="https://github.com/tyrohellion"
+            class="nav-item-with-icon"
+            target="_blank"
+            data-tippy-content="GitHub"
+            id="tippyButton"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github-icon lucide-github"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/evanmarchesani/"
+            class="nav-item-with-icon"
+            target="_blank"
+            data-tippy-content="LinkedIn"
+            id="tippyButton"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin-icon lucide-linkedin"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a
+            class="nav-item"
+            onclick="toggleTheme()"
+            id="themeIcon"
+            data-tippy-content="Change Theme"
+          ></a>
         </div>
-        <footer class="site-footer">
-            <p>Evan Marchesani | UX Designer</p>
-        </footer>
+      </div>
+      <div class="project-align-middle">
+        <div class="project-wrapper">
+          <div class="project-title-wrapper">
+            <div class="project-title-name">arcadia</div>
+            <div class="project-title-desc">
+              Full Stack Rocket League Esports Website
+            </div>
+          </div>
+          <img
+            class="static-mockup-images"
+            src="images/arcadia/playerpage.png"
+          />
+          <div class="technologies-used-box">
+            <div class="role-headings-container">
+              <div class="role-title-text">Roles</div>
+              <div class="role-item-wrapper">
+                <div class="technology-item-name">User Interface Designer</div>
+                <div class="technology-item-name">
+                  Full Stack Next.js Developer
+                </div>
+              </div>
+            </div>
+            <div class="role-headings-container">
+              <div class="role-title-text">Tools</div>
+              <div class="technology-item-wrapper">
+                <img class="technology-item-icon" src="icons/nextjs.svg" />
+                <div class="technology-item-name">Next.js</div>
+              </div>
+              <div class="technology-item-wrapper">
+                <img class="technology-item-icon" src="icons/css.png" />
+                <div class="technology-item-name">CSS</div>
+              </div>
+              <div class="technology-item-wrapper">
+                <img class="technology-item-icon" src="icons/github.svg" />
+                <div class="technology-item-name">GitHub</div>
+              </div>
+              <div class="technology-item-wrapper">
+                <img class="technology-item-icon" src="icons/shiftrle.png" />
+                <div class="technology-item-name">ShiftRLE API</div>
+              </div>
+              <div class="technology-item-wrapper">
+                <img class="technology-item-icon" src="icons/figma.png" />
+                <div class="technology-item-name">Figma</div>
+              </div>
+            </div>
+            <div class="role-headings-container">
+              <div class="role-title-text">Deliverables</div>
+              <div class="technology-item-wrapper">
+                <div class="technology-item-name">Full Stack Website</div>
+              </div>
+              <div class="technology-item-wrapper">
+                <div class="technology-item-name">Live Pages</div>
+              </div>
+              <div class="technology-item-wrapper">
+                <div class="technology-item-name">
+                  Completely Responsive Design
+                </div>
+              </div>
+              <div class="technology-item-wrapper">
+                <div class="technology-item-name">Future Concept Redesign</div>
+              </div>
+            </div>
+            <div class="role-headings-container">
+              <div class="role-title-text">Duration</div>
+              <div class="technology-item-wrapper">
+                <div class="technology-item-name">4 months</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body-wrapper-firefox">
+            <div class="project-title-desc">Overview</div>
+            <div class="project-paragraph-wrapper">
+              <div class="project-body">
+                arcadia, a premier full-stack platform dedicated to the Rocket
+                League esports scene. Created using Next.js, arcadia integrates
+                the zsr.octane.gg API to deliver comprehensive and up-to-date
+                information on Rocket League’s competitive landscape. It is
+                designed to be as user friendly as possible while providing
+                detailed information for power users or casual users alike.
+              </div>
+            </div>
+          </div>
+          <div class="section-container">
+            <div class="project-title-desc">Project goals</div>
+            <div class="project-goals-wrapper">
+              <div class="project-goal-tile">
+                <div class="project-goal-title">Extensive</div>
+                <div class="project-goal-body-card-text">
+                  I wanted this project to include any kind of stat or metric
+                  that the user could ever want. It was made with power users in
+                  mind. It features a GUI feature for everything that is
+                  accessible through the public ShiftRLE API.
+                </div>
+              </div>
+              <div class="project-goal-tile">
+                <div class="project-goal-title">Responsive</div>
+                <div class="project-goal-body-card-text">
+                  One of my main goals from the very beginning was for the
+                  website to be fully accessible from any device. This means
+                  that the entire website is perfectly engineered for mobile
+                  screens and desktop platforms seamlessly.
+                </div>
+              </div>
+              <div class="project-goal-tile">
+                <div class="project-goal-title">Intuitive</div>
+                <div class="project-goal-body-card-text">
+                  Although I geared the website towards power users in mind. I
+                  wanted the UI to be User-centered. I planned this goal by
+                  using my experience in UX Design and Design principles to
+                  create a frictionless interface for anyone new to the website.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-container">
+            <div class="project-title-desc">Process</div>
+            <div class="project-subheading-body-wrapper">
+              <div class="project-title-h2">Previous Iteration</div>
+              <div class="project-goal-body">
+                I started this process by creating the website using a Python
+                Flask backend to interface with the API with the rest of the
+                codebase being vanilla HTML, CSS, and JavaScript. After getting
+                to what I considered to be a rough finished product, I knew that
+                I could do better.
+              </div>
+            </div>
+            <a
+              href="https://github.com/tyrohellion/demos/"
+              class="proposal-preview"
+              target="_blank"
+            >
+              <img
+                class="proposal-preview-img"
+                src="images/arcadia/publicarchive.png"
+              />
+              <button class="preview-button">Visit public archive</button>
+            </a>
+            <div class="project-action-buttons">
+              <a
+                href="https://github.com/tyrohellion/demos/"
+                class="visit-button"
+                target="_blank"
+              >
+                <div class="visit-text">Visit public archive</div>
+                <i data-feather="external-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="section-container">
+            <div class="project-subheading-body-wrapper">
+              <div class="project-title-h2">First Class Features</div>
+              <div class="project-title-h3">Universal Search</div>
+              <div class="project-goal-body">
+                While making this website I wanted to create a universal search
+                that is perfectly intuitive, fast, helpful and full of
+                information. I did this by making the search overlay full screen
+                and dim the background so the user can get fully immersed into
+                their action. Next I wanted to accomodate anything the user
+                would be searching so I grouped Players, Teams and Events all
+                into their own separate boxes. This made it easy for the user to
+                differentiate all 3 search results.
+              </div>
+              <img
+                class="static-mockup-images"
+                src="images/arcadia/universalsearch.png"
+              />
+            </div>
+          </div>
+          <div class="project-subheading-body-wrapper">
+            <div class="project-title-h3">
+              Vast Player and Team Overview Pages
+            </div>
+            <div class="project-goal-body">
+              I wanted the user to be able to visit a certain player or team
+              page and get access to the information they're looking for
+              directly on the first page 90% of the time. For this I created
+              boxes of structured information that can all be seen at a glance
+              with important information highlighted with a slight accent color.
+              The width of these boxes also makes a perfect mobile layout where
+              the user can just scroll to see the boxes with no information
+              obscured or removed.
+            </div>
+            <img
+              class="static-mockup-images"
+              src="images/arcadia/playerpage.png"
+            />
+            <img
+              class="static-mockup-images"
+              src="images/arcadia/teampage.png"
+            />
+          </div>
+          <div class="project-subheading-body-wrapper">
+            <div class="project-title-h3">Helpful Event Details</div>
+            <div class="project-goal-body">
+              Similar to the player and team pages, I wanted the user to be able
+              to visit an event page and get access to the information they're
+              looking for directly on the first page 90% of the time. For this I
+              created boxes of structured information that can all be seen at a
+              glance with important information highlighted with a slight accent
+              color. The width of these boxes also makes a perfect mobile layout
+              where the user can just scroll to see the boxes with no
+              information obscured or removed.
+            </div>
+            <img
+              class="static-mockup-images"
+              src="images/arcadia/eventhomepage.png"
+            />
+            <img
+              class="static-mockup-images"
+              src="images/arcadia/eventparticipants.png"
+            />
+          </div>
+          <div class="project-subheading-body-wrapper">
+            <div class="project-title-h3">
+              Powerful Advanced Search With Filters
+            </div>
+            <div class="project-goal-body">
+              Just in case the Universal Search wasn't able to get the user the
+              result they were looking for, I created advanced search pages for
+              all three categories. These pages feature infinite scrolling and
+              powerful search filters so the user will always find the result
+              they are looking for.
+            </div>
+            <img
+              class="static-mockup-images"
+              src="images/arcadia/eventadvancedsearch.png"
+            />
+          </div>
+          <div class="project-subheading-body-wrapper">
+            <div class="project-title-h3">
+              Carefully Crafted Match Detail Pages
+            </div>
+            <div class="project-goal-body">
+              Match pages turned out to be one of my proudest parts of the
+              arcadia design. I originally didn't know how I was going to fit
+              the entire design nicely on a mobile screen. One of the pain
+              points I faced was accounting for long team names on a smaller
+              screen without wrapping the text to a new line. The text would
+              always Collide with the other or go off the screen. This is how I
+              came up with the tooltip design. They are placed on opposite sides
+              so that even on smaller screens you can still read all team names
+              without them colliding or interfering with team logos at all. My
+              next challenge to overcome was getting scores to fit on mobile
+              layouts. I overcame this by making the scoreboard simply in a
+              column direction so the entire box could just be resized from the
+              sides inwards.
+            </div>
+            <img
+              class="static-mockup-images"
+              src="images/arcadia/matchdetails.png"
+            />
+          </div>
+          <div class="section-container">
+            <div class="project-title-desc">Final Application</div>
+            <div class="project-goal-body-final">
+              This project showcases my ability to develop a full-stack web
+              application that integrates multiple technologies to create a
+              user-friendly and informative platform. It allowed me to overcome
+              design challenges that required creative solutions. Whether you're
+              a casual fan or a dedicated esports enthusiast, this website has
+              everything you need to stay informed about the Rocket League
+              competitive scene.
+            </div>
+            <div class="gallery">
+              <a href="images/arcadia/Home.png" class="glightbox"
+                ><img src="images/arcadia/Home.png" alt=""
+              /></a>
+              <a href="images/arcadia/universalsearch.png" class="glightbox"
+                ><img src="images/arcadia/universalsearch.png" alt=""
+              /></a>
+              <a href="images/arcadia/matchdetails.png" class="glightbox"
+                ><img src="images/arcadia/matchdetails.png" alt=""
+              /></a>
+              <a href="images/arcadia/playerpage.png" class="glightbox"
+                ><img src="images/arcadia/playerpage.png" alt=""
+              /></a>
+              <a href="images/arcadia/playerresultspage.png" class="glightbox"
+                ><img src="images/arcadia/playerresultspage.png" alt=""
+              /></a>
+              <a href="images/arcadia/teampage.png" class="glightbox"
+                ><img src="images/arcadia/teampage.png" alt=""
+              /></a>
+              <a href="images/arcadia/eventadvancedsearch.png" class="glightbox"
+                ><img src="images/arcadia/eventadvancedsearch.png" alt=""
+              /></a>
+              <a href="images/arcadia/eventparticipants.png" class="glightbox"
+                ><img src="images/arcadia/eventparticipants.png" alt=""
+              /></a>
+            </div>
+            <div class="project-action-buttons">
+              <a
+                href="https://github.com/tyrohellion/arcadia-nextjs"
+                class="visit-button"
+                target="_blank"
+              >
+                <div class="visit-text">GitHub Repo</div>
+                <i data-feather="external-link"></i>
+              </a>
+              <a
+                href="https://arcadia-tyro.vercel.app"
+                class="visit-button"
+                target="_blank"
+              >
+                <div class="visit-text">Live Site</div>
+                <i data-feather="external-link"></i>
+              </a>
+            </div>
+            <div class="note-text">
+              Note: The ShiftRLE API is currently down for an unknown amount of
+              time, so the live website doesn't work until the API goes live
+              again.
+            </div>
+          </div>
+          <div class="section-container">
+            <div class="project-title-desc">Future Plans</div>
+            <div class="project-goal-body-final">
+              This is a concept prototype of a UI redesign I made that might
+              make it to production if the ShiftRLE API ever comes back.
+            </div>
+            <div class="gallery">
+              <a href="images/arcadia/arcadiaredesign1.png" class="glightbox"
+                ><img src="images/arcadia/arcadiaredesign1.png" alt=""
+              /></a>
+              <a href="images/arcadia/arcadiaredesign2.png" class="glightbox"
+                ><img src="images/arcadia/arcadiaredesign2.png" alt=""
+              /></a>
+              <a href="images/arcadia/arcadiaredesign3.png" class="glightbox"
+                ><img src="images/arcadia/arcadiaredesign3.png" alt=""
+              /></a>
+            </div>
+            <div class="project-action-buttons">
+              <a
+                href="https://www.figma.com/proto/44rgd8GAG4elCbFURNGUqI/VD2-Final?node-id=0-1&t=PJDFM1syETQhEAqw-1/"
+                class="visit-button"
+                target="_blank"
+              >
+                <div class="visit-text">Concept Prototype</div>
+                <i data-feather="external-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="section-container">
+            <div class="project-title-desc">Takeaways</div>
+            <div class="project-goal-body-final">
+              This project is my biggest to date. It was my first big web
+              developer project and a lot of design work went along. It helped
+              me grow as a designer and get feedback on my designs from user
+              research.
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="site-footer">
+        <p>Evan Marchesani | UX Designer</p>
+      </footer>
     </div>
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@4"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="script-v0.6.js"></script>
     <script>
-        feather.replace();
+      feather.replace();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
-        const lightbox = GLightbox({ touchNavigation: true, loop: true });
+      const lightbox = GLightbox({ touchNavigation: true, loop: true });
     </script>
-</body>
-
+  </body>
 </html>
