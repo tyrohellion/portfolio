@@ -31,7 +31,7 @@ if (btn) {
 }
 
 if (!localStorage.getItem("theme")) {
-  setTheme("light");
+  setTheme("dark");
 } else {
   setTheme(localStorage.getItem("theme"));
 }
