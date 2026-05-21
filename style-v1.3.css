@@ -319,7 +319,7 @@ h2 {
 }
 
 .pfp:hover {
-  transform: scale(1.13);
+  transform: scale(0.87);
 }
 
 .img-svg {
@@ -331,6 +331,7 @@ h2 {
   background-color: var(--transparent);
   backdrop-filter: blur(3px);
   filter: var(--invert-svg-color);
+  opacity: 0;
 }
 
 .img-png {
@@ -339,17 +340,17 @@ h2 {
   height: 100%;
   object-fit: cover;
   transform: scaleX(1.13);
-  opacity: 0;
+  opacity: 1;
   z-index: 2;
   transition: opacity 0.3s ease;
 }
 
 .pfp:hover .img-svg {
-  opacity: 0;
+  opacity: 1;
 }
 
 .pfp:hover .img-png {
-  opacity: 1;
+  opacity: 0;
 }
 
 #navHome {
