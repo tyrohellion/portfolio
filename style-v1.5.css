@@ -189,10 +189,27 @@ h2 {
   border: none;
   gap: 1rem;
   cursor: pointer;
+  transition: transform 150ms;
 }
 
 .audience-nav button.active {
   color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+}
+
+.audience-nav button:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+  transform: scale(1.05);
+}
+
+.audience-nav button:active {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+  transform: scale(0.95);
 }
 
 .site-header h1 {
@@ -215,7 +232,7 @@ h2 {
 }
 
 .site-footer {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 50px;
   font-size: 0.8rem;
@@ -226,9 +243,7 @@ h2 {
 
 .navbar-background-wrapper {
   position: fixed;
-  left: calc(100vw - 50vw);
-  top: 4rem;
-  transform: translate(-50%, -50%);
+  top: 2rem;
   z-index: 11;
   width: 100%;
   display: flex;
@@ -427,14 +442,14 @@ span {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding: 1rem;
   align-items: flex-start;
   background-color: var(--color-card-bg);
   backdrop-filter: blur(3px);
   border-radius: 0.5rem;
   border: 1px solid var(--color-border-light);
-  padding: 1rem;
   position: relative;
-  transition: all 150ms;
+  transition: transform 150ms;
 }
 
 .arcadia-href {
@@ -476,8 +491,13 @@ span {
 
 .project-card:hover {
   background-color: var(--color-surface-bg);
-  transition: all 150ms;
+  transform: scale(1.05);
   cursor: pointer;
+}
+
+.project-card:active {
+  background-color: var(--color-surface-bg);
+  transform: scale(0.95);
 }
 
 /* Projects page */
@@ -615,9 +635,18 @@ span {
 .static-mockup-images {
   width: 100%;
   height: auto;
+  border-radius: 0.5rem;
   object-fit: contain;
+}
+
+.static-mockup-images-wrapper {
   border-radius: 0.5rem;
   padding: 0rem 1rem 2rem 1rem;
+  transition: transform 150ms ease;
+}
+
+.static-mockup-images-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .project-goals-wrapper {
@@ -850,27 +879,7 @@ span {
   padding: 1rem 3rem 1rem 3rem;
 }
 
-.glightbox {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.glightbox img {
-  border-radius: 0.5rem;
-  width: auto;
-  min-width: 150px;
-  max-width: 250px;
-  height: auto;
-  object-fit: cover;
-  box-shadow: var(--shadow-heavy);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.glightbox:nth-child(1) {
+/* .glightbox:nth-child(1) {
   transform: rotate(-4deg) translate(-10px, 10px);
   z-index: 1;
 }
@@ -902,7 +911,7 @@ span {
 
 .glightbox:hover img {
   box-shadow: var(--shadow-heavy);
-}
+} */
 
 .project-action-buttons {
   display: flex;

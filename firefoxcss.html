@@ -15,7 +15,7 @@
         document.documentElement.setAttribute("data-theme", t || s);
       })();
     </script>
-    <link rel="stylesheet" href="style-v1.4.css" />
+    <link rel="stylesheet" href="style-v1.5.css" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,7 +60,9 @@
               </svg>
             </a>
           </div>
-          <div class="breadcrumb">/ <span class="breadcrumb-underline">FirefoxCSS</span></div>
+          <div class="breadcrumb">
+            / <span class="breadcrumb-underline">FirefoxCSS</span>
+          </div>
         </div>
         <div class="navbar">
           <a
@@ -130,10 +132,20 @@
               Custom FireFox CSS theme and User.js
             </div>
           </div>
-          <img
-            class="static-mockup-images"
-            src="images/firefoxcss/firefoxcss.png"
-          />
+          <div class="static-mockup-images-wrapper">
+            <a
+              href="images/firefoxcss/firefoxcss.png"
+              class="glightbox"
+              data-tippy-content="View fullscreen"
+              id="viewFullscreen"
+              alt=""
+            >
+              <img
+                class="static-mockup-images"
+                src="images/firefoxcss/firefoxcss.png"
+              />
+            </a>
+          </div>
           <div class="technologies-used-box">
             <div class="role-headings-container">
               <div class="role-title-text">Roles</div>
@@ -292,14 +304,34 @@
                 changed by Firefox updates so I took on the task of rewriting
                 elements or adding new CSS styles.
               </div>
-              <img
-                class="static-mockup-images"
-                src="images/firefoxcss/main.png"
-              />
-              <img
-                class="static-mockup-images"
-                src="images/firefoxcss/tabpreviews.png"
-              />
+              <div class="static-mockup-images-wrapper">
+                <a
+                  href="images/firefoxcss/main.png"
+                  class="glightbox"
+                  data-tippy-content="View fullscreen"
+                  id="viewFullscreen"
+                  alt=""
+                >
+                  <img
+                    class="static-mockup-images"
+                    src="images/firefoxcss/main.png"
+                  />
+                </a>
+              </div>
+              <div class="static-mockup-images-wrapper">
+                <a
+                  href="images/firefoxcss/tabpreviews.png"
+                  class="glightbox"
+                  data-tippy-content="View fullscreen"
+                  id="viewFullscreen"
+                  alt=""
+                >
+                  <img
+                    class="static-mockup-images"
+                    src="images/firefoxcss/tabpreviews.png"
+                  />
+                </a>
+              </div>
             </div>
           </div>
           <div class="project-subheading-body-wrapper">
@@ -312,10 +344,21 @@
               didn't have any back or forward buttons which I wanted back in the
               design.
             </div>
-            <img
-              class="static-mockup-images"
-              src="images/firefoxcss/permissionsmenu.png"
-            />
+
+            <div class="static-mockup-images-wrapper">
+              <a
+                href="images/firefoxcss/permissionsmenu.png"
+                class="glightbox"
+                data-tippy-content="View fullscreen"
+                id="viewFullscreen"
+                alt=""
+              >
+                <img
+                  class="static-mockup-images"
+                  src="images/firefoxcss/permissionsmenu.png"
+                />
+              </a>
+            </div>
           </div>
           <div class="project-subheading-body-wrapper">
             <div class="project-title-h3">Replacing Icons</div>
@@ -323,10 +366,20 @@
               Next I replaced and added some new icons for the browser UI. I
               tried to use icons that had a really nice look together.
             </div>
-            <img
-              class="static-mockup-images"
-              src="images/firefoxcss/replacedicons.png"
-            />
+            <div class="static-mockup-images-wrapper">
+              <a
+                href="images/firefoxcss/replacedicons.png"
+                class="glightbox"
+                data-tippy-content="View fullscreen"
+                id="viewFullscreen"
+                alt=""
+              >
+                <img
+                  class="static-mockup-images"
+                  src="images/firefoxcss/replacedicons.png"
+                />
+              </a>
+            </div>
           </div>
           <div class="project-subheading-body-wrapper">
             <div class="project-title-h3">
@@ -342,10 +395,20 @@
               file with all the installation instructions. Super easy to follow
               and setup.
             </div>
-            <img
-              class="static-mockup-images"
-              src="images/firefoxcss/tutorial.png"
-            />
+            <div class="static-mockup-images-wrapper">
+              <a
+                href="images/firefoxcss/tutorial.png"
+                class="glightbox"
+                data-tippy-content="View fullscreen"
+                id="viewFullscreen"
+                alt=""
+              >
+                <img
+                  class="static-mockup-images"
+                  src="images/firefoxcss/tutorial.png"
+                />
+              </a>
+            </div>
           </div>
           <div class="section-container">
             <div class="project-title-desc">Final Result</div>
@@ -356,7 +419,7 @@
               project is still ongoing and can be used by anyone by going to my
               GitHub!
             </div>
-            <div class="gallery">
+<!--             <div class="gallery">
               <a href="images/firefoxcss/firefoxcss.png" class="glightbox"
                 ><img src="images/firefoxcss/firefoxcss.png" alt=""
               /></a>
@@ -372,7 +435,7 @@
               <a href="images/firefoxcss/replacedicons.png" class="glightbox"
                 ><img src="images/firefoxcss/replacedicons.png" alt=""
               /></a>
-            </div>
+            </div> -->
             <div class="project-action-buttons">
               <a
                 href="https://github.com/tyrohellion/arcadia/"
@@ -401,7 +464,7 @@
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@4"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="script-v0.7.js"></script>
+    <script src="script-v0.8.js"></script>
     <script>
       feather.replace();
     </script>

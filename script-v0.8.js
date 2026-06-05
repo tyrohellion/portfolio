@@ -40,6 +40,10 @@ tippy('#tippyButton', {
   placement: 'bottom',
 })
 
+tippy('#viewFullscreen', {
+  followCursor: true,
+})
+
 tippy('#themeIcon', {
   placement: 'bottom',
 })
